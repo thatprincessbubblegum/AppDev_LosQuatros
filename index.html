@@ -5,6 +5,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--link to css file
     <link rel="stylesheet" href="untitled.css"> -->
+    <!--bootstrap stars-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <style>
       .carousel-item {
       height: 500px; 
@@ -14,6 +17,52 @@
       width: 100%;
       object-fit: cover; 
       }
+
+      /* WHY US */
+      .circle-icon {
+      width: 80px;
+      height: 80px;
+      border: 3px solid #000;
+      border-radius: 50%;
+      margin: 0 auto;
+      }
+
+/* REVIEW IMAGE */
+      .review-img {
+      width: 150px;
+      height: 150px;
+      border: 4px solid #000;
+      border-radius: 50%;
+      background: #ddd;
+}
+
+/* STARS */
+      .stars i {
+      color: #f4c150;
+      font-size: 20px;
+      margin-right: 2px;
+}
+
+/* SECTION SPACING */
+      .review-section {
+      padding: 60px 0;
+}
+
+  /* TEXT STYLE */
+      .review-text {
+      font-size: 15px;
+      color: #555;
+}
+
+  /* CAROUSEL CONTROLS */
+      .carousel-control-prev-icon, .carousel-control-next-icon {
+      background: none;
+}
+
+      .carousel-control-prev i, .carousel-control-next i {
+      font-size: 28px;
+      color: #000;
+}
     </style>
 
 </head>
@@ -30,12 +79,12 @@
 
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Destinations</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="destinations&packages.html">Destinations & Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item ms-3">
-          <a class="btn btn-dark" href="#">Book</a>
+          <a class="btn btn-dark" href="book.html">Book</a>
         </li>
       </ul>
     </div>
@@ -91,89 +140,171 @@
 
 </div>
 <br>
+  <!-- IMAGE GRID -->
+<div class="container-fluid p-0">
+  <div class="row g-0">
 
-<!-- SEARCH BAR -->
-<div class="container">
-  <div class="search-bar">
-    <div class="row g-2">
-      <div class="col-md">
-        <select class="form-select">
-          <option>Select destination</option>
-        </select>
+    <div class="col-md-3">
+      <div class="image-box">
+        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
+        <div class="image-text">
+          SINGAPORE 3 DAYS 2 NIGHTS FREE AND EASY PACKAGE
+        </div>
       </div>
-      <div class="col-md">
-        <input type="date" class="form-control">
+    </div>
+
+    <div class="col-md-3">
+      <div class="image-box">
+        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
+        <div class="image-text">
+          DAKAK RESORT PACKAGE TOUR
+        </div>
       </div>
-      <div class="col-md">
-        <input type="number" class="form-control" placeholder="Guests">
+    </div>
+
+    <div class="col-md-3">
+      <div class="image-box">
+        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
+        <div class="image-text">
+          DUMAGUETE TOUR PACKAGES
+        </div>
       </div>
-      <div class="col-md">
-        <select class="form-select">
-          <option>Activity/Trip Type</option>
-        </select>
+    </div>
+
+    <div class="col-md-3">
+      <div class="image-box">
+        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
+        <div class="image-text">
+          NEW ZEALAND TOUR PACKAGE
+        </div>
       </div>
-      <div class="col-md">
-        <select class="form-select">
-          <option>Price Range</option>
-        </select>
-      </div>
-      <div class="col-md-auto">
-        <button class="btn btn-outline-dark w-100">Search</button>
-      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+
+<!-- WHY US -->
+<div class="container text-center my-5">
+  <h4 class="mb-5">WHY US?</h4>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="circle-icon mb-3"></div>
+      <p>We've been 30 years in business</p>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="circle-icon mb-3"></div>
+      <p>Trusted by thousands of travelers</p>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="circle-icon mb-3"></div>
+      <p>Affordable and flexible packages</p>
     </div>
   </div>
 </div>
 
-<!-- TRENDING DEALS -->
-<div class="container mt-5">
-  <h2 class="text-center mb-4">Trending Deals</h2>
+<!-- REVIEW CAROUSEL -->
+<div class="container review-section text-center">
+  <p class="text-muted mb-5">Here's what our customers have to say about us!</p>
 
-  <div class="row">
-    
-    <!-- CARD 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top">
-        <div class="card-body">
-          <small class="text-muted">Category</small>
-          <h5>Boracay</h5>
-          <p class="mb-1">5 Days</p>
-          <p class="mb-1">★ 4.5 (75 reviews)</p>
-          <p class="mb-2">From ₱25,000</p>
-          <a href="#">Read more</a>
+  <div id="reviewCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <div class="carousel-inner">
+
+      <!-- REVIEW 1 -->
+      <div class="carousel-item active">
+        <div class="row align-items-center justify-content-center">
+          
+          <div class="col-md-3 mb-3 mb-md-0">
+            <div class="review-img mx-auto"></div>
+          </div>
+
+          <div class="col-md-6 text-md-start text-center">
+            <h5 class="fw-bold">Juan Dela Cruz</h5>
+
+            <div class="stars mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+
+            <p class="review-text">
+              I really enjoyed their service because everything was smooth and well organized.
+            </p>
+          </div>
+
         </div>
       </div>
-    </div>
 
-    <!-- CARD 2 -->
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top">
-        <div class="card-body">
-          <small class="text-muted">Category</small>
-          <h5>Boracay</h5>
-          <p class="mb-1">5 Days</p>
-          <p class="mb-1">★ 4.5 (75 reviews)</p>
-          <p class="mb-2">From ₱25,000</p>
-          <a href="#">Read more</a>
+      <!-- REVIEW 2 -->
+      <div class="carousel-item">
+        <div class="row align-items-center justify-content-center">
+          
+          <div class="col-md-3 mb-3 mb-md-0">
+            <div class="review-img mx-auto"></div>
+          </div>
+
+          <div class="col-md-6 text-md-start text-center">
+            <h5 class="fw-bold">Maria Santos</h5>
+
+            <div class="stars mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+            </div>
+
+            <p class="review-text">
+              Amazing experience! Would definitely book again.
+            </p>
+          </div>
+
         </div>
       </div>
-    </div>
 
-    <!-- CARD 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top">
-        <div class="card-body">
-          <small class="text-muted">Category</small>
-          <h5>Boracay</h5>
-          <p class="mb-1">5 Days</p>
-          <p class="mb-1">★ 4.5 (75 reviews)</p>
-          <p class="mb-2">From ₱25,000</p>
-          <a href="#">Read more</a>
+      <!-- REVIEW 3 -->
+      <div class="carousel-item">
+        <div class="row align-items-center justify-content-center">
+          
+          <div class="col-md-3 mb-3 mb-md-0">
+            <div class="review-img mx-auto"></div>
+          </div>
+
+          <div class="col-md-6 text-md-start text-center">
+            <h5 class="fw-bold">Alex Reyes</h5>
+
+            <div class="stars mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+
+            <p class="review-text">
+              Super worth it. The destinations were beautiful and the service was top-notch.
+            </p>
+          </div>
+
         </div>
       </div>
+
     </div>
+
+    <!-- CONTROLS -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+      <i class="bi bi-chevron-right"></i>
+    </button>
 
   </div>
 </div>
