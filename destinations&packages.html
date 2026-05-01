@@ -7,6 +7,55 @@
     <link rel="stylesheet" href="untitled.css"> -->
     <!--bootstrap stars-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+      /* GRID LAYOUT */
+      .dest-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+      }
+
+    /* CARD STYLE */
+    .dest-card {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      position: relative;
+      background: #ddd;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 10px rgba (0,0,0,0.1);
+    }
+
+      /* HOVER EFFECT */
+      .dest-card:hover {
+        background: #bbb;
+        transform: scale(1.02);
+      }
+
+      /* TEXT ABOVE IMAGE */
+      .dest-card span {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* SPECIFIC POSITIONS */
+      .japan { grid-column: 1; grid-row: 1; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cR7kIr2Xb7FUg1XX-XoVOr8NSukvdIIitw&s'); }
+      .korea { grid-column: 2; grid-row: 1; background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'); }
+      .local { grid-column: 3; grid-row: 1; background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'); }
+
+      .usa { grid-column: 1; grid-row: 2; background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'); }
+      .china { grid-column: 2; grid-row: 2; background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'); }
+      .more { grid-column: 3; grid-row: 2; background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'); }
+    </style>
 </head>
 <body>
     <!-- NAVBAR -->
@@ -33,7 +82,7 @@
 </nav>
 <br>
 
-    <!-- SEARCH BAR -->
+<!-- SEARCH BAR -->
 <div class="container">
   <div class="search-bar">
     <div class="row g-2">
@@ -65,9 +114,41 @@
   </div>
 </div>
 
-<!-- TRENDING DEALS -->
+  <div class="container my-5">
+  <h5 class="text-center mb-4">TRENDING DESTINATIONS</h5>
+
+  <div class="dest-grid">
+
+    <a href="#" class="dest-card japan">
+      <span>JAPAN</span>
+    </a>
+
+    <a href="#" class="dest-card korea">
+      <span>SOUTH KOREA</span>
+    </a>
+
+    <a href="#" class="dest-card local">
+      <span>LOCAL DESTINATIONS</span>
+    </a>
+
+    <a href="#" class="dest-card usa">
+      <span>UNITED STATES</span>
+    </a>
+
+    <a href="#" class="dest-card china">
+      <span>CHINA</span>
+    </a>
+
+    <a href="#" class="dest-card more">
+      <span>SEE MORE</span>
+    </a>
+
+  </div>
+</div>
+
+<!-- TRENDING PACKAGES -->
 <div class="container mt-5">
-  <h2 class="text-center mb-4">Trending Deals</h2>
+  <h2 class="text-center mb-4">Trending Packages</h2>
 
   <div class="row">
     
@@ -77,7 +158,7 @@
         <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top">
         <div class="card-body">
           <small class="text-muted">Category</small>
-          <h5>Boracay</h5>
+          <h5>Vietnam</h5>
           <p class="mb-1">5 Days</p>
           <p class="mb-1">★ 4.5 (75 reviews)</p>
           <p class="mb-2">From ₱25,000</p>
@@ -92,7 +173,7 @@
         <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top">
         <div class="card-body">
           <small class="text-muted">Category</small>
-          <h5>Boracay</h5>
+          <h5>Singapore</h5>
           <p class="mb-1">5 Days</p>
           <p class="mb-1">★ 4.5 (75 reviews)</p>
           <p class="mb-2">From ₱25,000</p>
@@ -107,7 +188,7 @@
         <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="card-img-top">
         <div class="card-body">
           <small class="text-muted">Category</small>
-          <h5>Boracay</h5>
+          <h5>Local</h5>
           <p class="mb-1">5 Days</p>
           <p class="mb-1">★ 4.5 (75 reviews)</p>
           <p class="mb-2">From ₱25,000</p>
@@ -121,27 +202,117 @@
 <div class="modal fade" id="tourModal1" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
-
       <div class="modal-body p-0">
-
         <!-- IMAGE CAROUSEL -->
         <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://via.placeholder.com/1200x400" class="d-block w-100">
+              <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="d-block w-100">
             </div>
             <div class="carousel-item">
-              <img src="https://via.placeholder.com/1200x400/999" class="d-block w-100">
+              <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="d-block w-100">
             </div>
           </div>
         </div>
 
         <!-- CONTENT -->
         <div class="p-4">
-
           <div class="row mb-3">
             <div class="col-md-8">
               <small class="text-muted">VIETNAM:</small>
+              <h4 class="fw-bold">HA LONG BAY PACKAGE</h4>
+              <p class="text-muted">
+                5 Days adventure exploring beaches, resorts, and guided tours.
+              </p>
+            </div>
+
+            <div class="col-md-4">
+              <div class="border p-3 text-center">
+                <small>FROM:</small>
+                <h5 class="fw-bold">₱25,000/PAX</h5>
+                <small>TWIN</small>
+                <hr>
+                <strong>APR 2026</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="border p-3 mb-3">
+            <strong>Flight Schedule:</strong>
+            <ul class="mb-1">
+              <li>MNL - VIET | April 5, 07:30 AM - 09:50 AM</li>
+              <li>VIET - MNL | April 10, 10:45 AM - 03:00 PM</li>
+            </ul>
+          </div>
+
+          <h6 class="fw-bold">INCLUSIONS</h6>
+          <hr>
+
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li>Airfare</li>
+                <li>Hotel stay</li>
+                <li>Transfers</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>Meals included</li>
+                <li>Tour guide</li>
+                <li>Insurance</li>
+              </ul>
+            </div>
+          </div>
+
+          <h6 class="fw-bold">REVIEWS</h6>
+          <hr>
+            <div class="col-md-6 text-md-start text-center">
+            <h5 class="fw-bold">Jean Cu</h5>
+
+            <div class="stars mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+
+            <p class="review-text">
+              Love the people. Love the coffee. Mwah mwah!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-dark">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tourModal2" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <!-- IMAGE CAROUSEL -->
+        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-4">
+          <div class="row mb-3">
+            <div class="col-md-8">
+              <small class="text-muted">VIETNAM</small>
               <h4 class="fw-bold">HA LONG BAY PACKAGE</h4>
               <p class="text-muted">
                 5 Days adventure exploring beaches, resorts, and guided tours.
@@ -186,18 +357,93 @@
               </ul>
             </div>
           </div>
-
         </div>
       </div>
-
       <div class="modal-footer">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button class="btn btn-dark">Book Now</button>
       </div>
-
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="tourModal3" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <!-- IMAGE CAROUSEL -->
+        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-4">
+          <div class="row mb-3">
+            <div class="col-md-8">
+              <small class="fw-bold">LOCAL</small>
+              <h4 class="fw-bold">It's More Fun Everywhere In the Philippines!</h4>
+              <p class="text-muted">
+                A 2-week adventure on Luzon, Visayas, and Mindanao.
+              </p>
+            </div>
+
+            <div class="col-md-4">
+              <div class="border p-3 text-center">
+                <small>FROM:</small>
+                <h5 class="fw-bold">₱25,000/PAX</h5>
+                <small>TWIN</small>
+                <hr>
+                <strong>APR 2026</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="border p-3 mb-3">
+            <strong>Flight Schedule:</strong>
+            <ul class="mb-1">
+              <li>MNL - DEST | 07:30 AM - 09:50 AM</li>
+              <li>DEST - MNL | 10:45 AM - 03:00 PM</li>
+            </ul>
+          </div>
+
+          <h6 class="fw-bold">Inclusions:</h6>
+          <hr>
+
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li>Airfare</li>
+                <li>Hotel stay</li>
+                <li>Transfers</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li>Meals included</li>
+                <li>Tour guide</li>
+                <li>Insurance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-dark">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
 </body>
