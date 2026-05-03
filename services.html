@@ -1,15 +1,113 @@
 <!DOCTYPE html>
 <head>
-    <title> Aerostar Travel & Tours</title>
+    <title>Aerostar Travel & Tours</title>
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--link to css file
-    <link rel="stylesheet" href="untitled.css"> -->
-    <!--bootstrap stars-->
+    <!--bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+      body {
+        background: #f0f0f0;
+      }
+
+      /* MAIN CARD */
+      .services-card {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 24px;
+        padding: 40px;
+      }
+
+      /* FILTER DROPDOWNS */
+      .filter-label {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 4px;
+      }
+
+      .filter-select {
+        background: #f0f0f0;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 14px;
+        width: 100%;
+        appearance: auto;
+      }
+
+      /* DESTINATION RESULT */
+      .destination-name {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .visa-badge {
+        font-size: 14px;
+        color: #198754;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* ACTION BUTTONS */
+      .btn-action {
+        width: 100%;
+        border-radius: 8px;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      /* FORM FIELDS */
+      .field-label {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #333;
+      }
+
+      .attach-input {
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 10px 14px;
+        font-size: 14px;
+        color: #888;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      .attach-input i {
+        color: #0d6efd;
+        font-size: 18px;
+      }
+
+      /* FOOTER */
+      .site-footer {
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        padding: 20px 40px;
+        font-size: 13px;
+      }
+
+      .footer-links a {
+        display: block;
+        color: #555;
+        text-decoration: none;
+        text-align: right;
+        line-height: 2;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
 </head>
 <body>
-    <!-- NAVBAR -->
+
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-light border-bottom">
   <div class="container">
     <a class="navbar-brand" href="#">Logo</a>
@@ -31,7 +129,181 @@
     </div>
   </div>
 </nav>
-<br>
 
+<!-- MAIN CONTENT -->
+<div class="container my-5">
+  <div class="services-card">
+
+    <!-- FILTERS -->
+    <div class="row g-3 mb-4">
+
+      <!-- Residency -->
+      <div class="col-md-3">
+        <div class="filter-label">Residency</div>
+        <select class="filter-select">
+          <option>Philippines</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- Citizenship -->
+      <div class="col-md-3">
+        <div class="filter-label">Citizenship</div>
+        <select class="filter-select">
+          <option>Philippines</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- Purpose of Travel -->
+      <div class="col-md-3">
+        <div class="filter-label">Purpose of travel</div>
+        <select class="filter-select">
+          <option>Tourism</option>
+          <option>Business</option>
+          <option>Study</option>
+        </select>
+      </div>
+
+      <!-- Destination -->
+      <div class="col-md-3">
+        <div class="filter-label">Destination</div>
+        <select class="filter-select">
+          <option>America</option>
+          <option>Japan</option>
+          <option>Korea</option>
+          <option>UK</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- DESTINATION RESULT + ACTION BUTTONS -->
+    <div class="row align-items-start mb-4">
+
+      <!-- Destination Info -->
+      <div class="col-md-8">
+        <div class="d-flex align-items-center gap-3 mb-2">
+          <span class="destination-name">America</span>
+          <span style="font-size: 24px;">🇺🇸</span>
+        </div>
+        <div class="visa-badge">
+          <i class="bi bi-check-circle-fill"></i>
+          Visa Required
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="col-md-4 col-lg-2 ms-auto">
+        <button class="btn btn-secondary btn-action mb-2">Application</button>
+        <button class="btn btn-outline-secondary btn-action">Requirements</button>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <!-- PASSENGER FORM -->
+    <div class="row g-3 mb-3">
+
+      <!-- First Name -->
+      <div class="col-md-6">
+        <div class="field-label">First Name</div>
+        <div class="input-group">
+          <input type="text" class="form-control" value="John">
+          <span class="input-group-text text-success border-0 bg-white">
+            <i class="bi bi-check-circle-fill"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="col-md-6">
+        <div class="field-label">Last Name</div>
+        <div class="input-group">
+          <input type="text" class="form-control" value="Smith">
+          <span class="input-group-text text-success border-0 bg-white">
+            <i class="bi bi-check-circle-fill"></i>
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FILE UPLOADS -->
+    <div class="row g-3 mb-3">
+
+      <!-- Passport -->
+      <div class="col-md-6">
+        <div class="field-label">Passport</div>
+        <div class="attach-input">
+          <span>Attach File</span>
+          <i class="bi bi-plus-circle"></i>
+        </div>
+        <input type="file" class="d-none">
+      </div>
+
+      <!-- 2x2 Picture -->
+      <div class="col-md-6">
+        <div class="field-label">2x2 picture</div>
+        <div class="attach-input">
+          <span>Attach File</span>
+          <i class="bi bi-plus-circle"></i>
+        </div>
+        <input type="file" class="d-none">
+      </div>
+
+    </div>
+
+    <div class="row g-3 mb-4">
+
+      <!-- Visa Application Form -->
+      <div class="col-md-6">
+        <div class="field-label">Visa application form</div>
+        <div class="attach-input">
+          <span>Attach File</span>
+          <i class="bi bi-plus-circle"></i>
+        </div>
+        <input type="file" class="d-none">
+      </div>
+
+      <!-- Purpose of Travel -->
+      <div class="col-md-6">
+        <div class="field-label">Purpose of travel</div>
+        <div class="attach-input">
+          <span>Attach File</span>
+          <i class="bi bi-plus-circle"></i>
+        </div>
+        <input type="file" class="d-none">
+      </div>
+
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="text-end">
+      <button class="btn btn-primary px-5">Submit</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="d-flex justify-content-between align-items-start">
+
+    <!-- Brand -->
+    <div class="fw-bold">Aerostars</div>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <a href="#">Terms & Services</a>
+      <a href="#">Copyright @ Aerostars2026</a>
+      <a href="#">Registered Trademark</a>
+    </div>
+
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
