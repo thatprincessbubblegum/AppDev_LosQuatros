@@ -168,11 +168,14 @@
       <!-- Destination -->
       <div class="col-md-3">
         <div class="filter-label">Destination</div>
-        <select class="filter-select">
-          <option>America</option>
-          <option>Japan</option>
-          <option>Korea</option>
-          <option>UK</option>
+        <select class="filter-select" id="destinationSelect" onchange="updateDestination()">
+          <option value="USA">USA</option>
+          <option value="Japan">Japan</option>
+          <option value="South Korea">South Korea</option>
+          <option value="China">China</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Domestic">Domestic</option>
         </select>
       </div>
 
@@ -184,10 +187,10 @@
       <!-- Destination Info -->
       <div class="col-md-8">
         <div class="d-flex align-items-center gap-3 mb-2">
-          <span class="destination-name">America</span>
-          <span style="font-size: 24px;">🇺🇸</span>
+          <span class="destination-name" id="destName">USA</span>
+          <span style="font-size: 24px;" id="destFlag">🇺🇸</span>
         </div>
-        <div class="visa-badge">
+        <div class="visa-badge" id="visaBadge">
           <i class="bi bi-check-circle-fill"></i>
           Visa Required
         </div>
@@ -195,7 +198,7 @@
 
       <!-- Action Buttons -->
       <div class="col-md-4 col-lg-2 ms-auto">
-        <button class="btn btn-secondary btn-action mb-2">Application</button>
+        <button class="btn btn-secondary btn-action mb-2" data-bs-toggle="modal" data-bs-target="#visaWarningModal">Application</button>
         <button class="btn btn-outline-secondary btn-action">Requirements</button>
       </div>
 
@@ -287,6 +290,46 @@
   </div>
 </div>
 
+<!-- VISA WARNING MODAL -->
+<div class="modal fade" id="visaWarningModal" tabindex="-1" aria-labelledby="visaWarningLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="visaWarningLabel">
+          <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
+          Before You Proceed
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body pt-2">
+        <p class="text-muted mb-3" style="font-size: 13px;">Please read the following before submitting your visa application:</p>
+        <ul class="list-unstyled">
+          <li class="d-flex gap-2 mb-3">
+            <i class="bi bi-info-circle-fill text-primary mt-1 flex-shrink-0"></i>
+            <span>Our agency only accommodates <strong>tourist visas</strong>. Other visa types are not supported.</span>
+          </li>
+          <li class="d-flex gap-2 mb-3">
+            <i class="bi bi-info-circle-fill text-primary mt-1 flex-shrink-0"></i>
+            <span>The visa processed is viable for up to <strong>three (3) months</strong> from the date of issuance.</span>
+          </li>
+          <li class="d-flex gap-2 mb-3">
+            <i class="bi bi-info-circle-fill text-primary mt-1 flex-shrink-0"></i>
+            <span>Our agency <strong>cannot guarantee visa approval</strong>. Final decisions are made solely by the destination country's embassy or consulate.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand, Proceed</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="d-flex justify-content-between align-items-start">
@@ -305,5 +348,39 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // DESTINATION DATA
+  const destinations = {
+    'USA':         { flag: '🇺🇸', visa: 'required',  disclaimer: null },
+    'Japan':       { flag: '🇯🇵', visa: 'required',  disclaimer: null },
+    'South Korea': { flag: '🇰🇷', visa: 'required',  disclaimer: null },
+    'China':       { flag: '🇨🇳', visa: 'required',  disclaimer: null },
+    'Vietnam':     { flag: '🇻🇳', visa: 'free',      disclaimer: 'Visa-free entry is valid for up to 21 days only.' },
+    'Singapore':   { flag: '🇸🇬', visa: 'free',      disclaimer: 'Visa-free entry is valid for up to 30 days only.' },
+    'Domestic':    { flag: '🇵🇭', visa: 'none',      disclaimer: null },
+  };
+
+  function updateDestination() {
+    const selected = document.getElementById('destinationSelect').value;
+    const data = destinations[selected];
+
+    document.getElementById('destName').textContent = selected;
+    document.getElementById('destFlag').textContent = data.flag;
+
+    const badge = document.getElementById('visaBadge');
+
+    if (data.visa === 'required') {
+      badge.innerHTML = '<i class="bi bi-check-circle-fill"></i> Visa Required';
+      badge.style.color = '#198754';
+    } else if (data.visa === 'free') {
+      badge.innerHTML = `<i class="bi bi-check-circle-fill"></i> Visa Free <small class="ms-2 text-muted fw-normal" style="font-size:12px;">* ${data.disclaimer}</small>`;
+      badge.style.color = '#0d6efd';
+    } else {
+      badge.innerHTML = '<i class="bi bi-x-circle-fill"></i> No Visa Required';
+      badge.style.color = '#6c757d';
+    }
+  }
+</script>
 </body>
 </html>
