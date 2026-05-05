@@ -1,5 +1,4 @@
  .hero-section {
-    /* Replace 'your-image.jpg' with your actual travel background image */
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://horizontalfallsadventures.com.au/wp-content/uploads/2023/09/HFSA-WA-experiences-12.jpg');
     background-size: cover;
     background-position: center;
@@ -28,7 +27,7 @@
   background-color: transparent !important; /* Removes the white background */
   border-bottom: none !important; /* Removes that thin gray line */
 }
-   .navbar-nav .nav-link, 
+  .navbar-nav .nav-link, 
   .navbar-brand {
     color: #ffffff !important; 
     text-decoration: none !important; /* Removes underline by default */
@@ -76,7 +75,7 @@
       font-weight: 500;
       transition: all 0.3s ease;
       border: none;
-      box-shadow: 0 4px 10px rgba (0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     /* HOVER EFFECT */
