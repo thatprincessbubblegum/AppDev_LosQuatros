@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inquiries.push(submissionData);
         localStorage.setItem("aerostarInquiries", JSON.stringify(inquiries));
 
-        alert("Inquiry Sent Successfully!\nTicket ID: " + submissionData.ticketID);
+        alert("Inquiry sent succesfully. We will be contacting you shortly via email.\nTicket ID: " + submissionData.ticketID);
 
         // Reset
         visaForm.reset();
