@@ -7,6 +7,20 @@
     display: flex;
     flex-direction: column;
   }
+  
+  .see-here-card img {
+    width: 100%;
+    height: 150px;       /* Forces all images to be the same height */
+    object-fit: cover;   /* Crops the image to fit without stretching it */
+    border-radius: 8px;  /* Optional: rounded corners like your cards */
+    border: 1px solid #ddd;
+  }
+  
+  .see-here-card p {
+    font-weight: 500;
+    color: #333;
+  }
+
 .navbar {
   position: absolute; /* Sits on top of the carousel */
   width: 100%;
@@ -86,25 +100,25 @@
     .korea {
       grid-column: 2;
       grid-row: 1;
-      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+      background-image: url('https://www.agoda.com/wp-content/uploads/2024/08/Namsan-Tower-during-autumn-in-Seoul-South-Korea.jpg');
     }
 
     .china {
       grid-column: 3;
       grid-row: 1;
-      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+      background-image: url('https://images.chinahighlights.com/allpicture/2018/07/6db2c5369f9549958c71e489_cut_800x500_61.jpg');
     }
 
     .usa {
       grid-column: 1;
       grid-row: 2;
-      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+      background-image: url('https://a.cdn-hotels.com/gdcs/production79/d567/927124e0-6bc6-4123-b007-e2b235afab1a.jpg?impolicy=fcrop&w=800&h=533&q=medium');
     }
 
     .spain {
       grid-column: 2;
       grid-row: 2;
-      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+      background-image: url('https://www.travelandleisure.com/thmb/Z-VBppnbsT6Dm0cNDJ5-jqrayW0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-sagrada-familia-SPAINPLACES0423-210abe4a810340a8a226d4b65494127a.jpg');
     }
 
     .local {
