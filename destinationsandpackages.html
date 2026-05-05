@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<head>
+  <title> Aerostar Travel & Tours</title>
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--link to css file
+    <link rel="stylesheet" href="untitled.css"> -->
+  <!--bootstrap stars-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    /* GRID LAYOUT */
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0px;
+    }
+
+    /* CARD STYLE */
+    .dest-card {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      position: relative;
+      background: #ddd;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 10px rgba (0, 0, 0, 0.1);
+    }
+
+    /* HOVER EFFECT */
+    .dest-card:hover {
+      transform: scale(1.02);
+    }
+
+    /* TEXT ABOVE IMAGE */
+    .dest-card span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* SPECIFIC POSITIONS */
+    .japan {
+      grid-column: 1;
+      grid-row: 1;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cR7kIr2Xb7FUg1XX-XoVOr8NSukvdIIitw&s');
+    }
+
+    .korea {
+      grid-column: 2;
+      grid-row: 1;
+      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+    }
+
+    .china {
+      grid-column: 3;
+      grid-row: 1;
+      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+    }
+
+    .usa {
+      grid-column: 1;
+      grid-row: 2;
+      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+    }
+
+    .spain {
+      grid-column: 2;
+      grid-row: 2;
+      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+    }
+
+    .local {
+      grid-column: 3;
+      grid-row: 2;
+      background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
+    }
+
+    .tour-image img {
+      height: 300px;
+      /* adjust this value */
+      object-fit: cover;
+      /* prevents stretching */
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-light border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="#">Logo</a>
+
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="destinations&packages.html">Destinations & Packages</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-3">
+            <a class="btn btn-dark" href="book.html">Book</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <div class="container my-5">
+    <h5 class="text-center mb-4">TRENDING DESTINATIONS</h5>
+
+    <div class="dest-grid">
+
+      <a href="#" class="dest-card japan" data-bs-toggle="modal" data-bs-target="#japanModal">
+        <span>JAPAN</span>
+      </a>
+
+      <a href="#" class="dest-card korea" data-bs-toggle="modal" data-bs-target="#southKoreaModal">
+        <span>SOUTH KOREA</span>
+      </a>
+
+      <a href="#" class="dest-card china" data-bs-toggle="modal" data-bs-target="#chinaModal">
+        <span>CHINA</span>
+      </a>
+
+      <a href="#" class="dest-card usa" data-bs-toggle="modal" data-bs-target="#unitedStatesModal">
+        <span>UNITED STATES</span>
+      </a>
+
+      <a href="#" class="dest-card spain" data-bs-toggle="modal" data-bs-target="#spainModal">
+        <span>SPAIN</span>
+      </a>
+
+      <a href="#" class="dest-card local" data-bs-toggle="modal" data-bs-target="#localModal">
+        <span>LOCAL DESTINATIONS</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!--DESTINATION CONTENT-->
+  <div class="modal fade" id="japanModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE CAROUSEL -->
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+            <div class="row mb-3">
+              <div class="col-md-8">
+                <small class="text-muted">LAND OF THE RISING SUN</small>
+                <h4 class="fw-bold">JAPAN</h4>
+                <p class="text-muted">
+                  Indulge in the harmony of tradition and innovation.
+                </p>
+              </div>
+
+              <h6 class="fw-bold">DESCRIPTION</h6>
+              <hr>
+
+              <h6 class="fw-bold">WHAT TO SEE HERE</h6>
+              <hr>
+
+
+              <h6 class="fw-bold">REVIEWS</h6>
+              <hr>
+              <div class="col-md-6 text-md-start text-center">
+                <h5 class="fw-bold">Jean Cu</h5>
+
+                <div class="stars mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="review-text">
+                  Love the people. Love the coffee. Mwah mwah!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="southKoreaModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE CAROUSEL -->
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+            <div class="row mb-3">
+              <div class="col-md-8">
+                <small class="text-muted">LAND OF THE RISING SUN</small>
+                <h4 class="fw-bold">JAPAN</h4>
+                <p class="text-muted">
+                  Indulge in the harmony of tradition and innovation.
+                </p>
+              </div>
+
+              <h6 class="fw-bold">DESCRIPTION</h6>
+              <hr>
+
+              <h6 class="fw-bold">WHAT TO SEE HERE</h6>
+              <hr>
+
+
+              <h6 class="fw-bold">REVIEWS</h6>
+              <hr>
+              <div class="col-md-6 text-md-start text-center">
+                <h5 class="fw-bold">Jean Cu</h5>
+
+                <div class="stars mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="review-text">
+                  Love the people. Love the coffee. Mwah mwah!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="chinaModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE CAROUSEL -->
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+            <div class="row mb-3">
+              <div class="col-md-8">
+                <small class="text-muted">LAND OF THE RISING SUN</small>
+                <h4 class="fw-bold">JAPAN</h4>
+                <p class="text-muted">
+                  Indulge in the harmony of tradition and innovation.
+                </p>
+              </div>
+
+              <h6 class="fw-bold">DESCRIPTION</h6>
+              <hr>
+
+              <h6 class="fw-bold">WHAT TO SEE HERE</h6>
+              <hr>
+
+
+              <h6 class="fw-bold">REVIEWS</h6>
+              <hr>
+              <div class="col-md-6 text-md-start text-center">
+                <h5 class="fw-bold">Jean Cu</h5>
+
+                <div class="stars mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="review-text">
+                  Love the people. Love the coffee. Mwah mwah!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="unitedStatesModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE CAROUSEL -->
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+            <div class="row mb-3">
+              <div class="col-md-8">
+                <small class="text-muted">LAND OF THE RISING SUN</small>
+                <h4 class="fw-bold">JAPAN</h4>
+                <p class="text-muted">
+                  Indulge in the harmony of tradition and innovation.
+                </p>
+              </div>
+
+              <h6 class="fw-bold">DESCRIPTION</h6>
+              <hr>
+
+              <h6 class="fw-bold">WHAT TO SEE HERE</h6>
+              <hr>
+
+
+              <h6 class="fw-bold">REVIEWS</h6>
+              <hr>
+              <div class="col-md-6 text-md-start text-center">
+                <h5 class="fw-bold">Jean Cu</h5>
+
+                <div class="stars mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="review-text">
+                  Love the people. Love the coffee. Mwah mwah!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="spainModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE CAROUSEL -->
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+            <div class="row mb-3">
+              <div class="col-md-8">
+                <small class="text-muted">LAND OF THE RISING SUN</small>
+                <h4 class="fw-bold">JAPAN</h4>
+                <p class="text-muted">
+                  Indulge in the harmony of tradition and innovation.
+                </p>
+              </div>
+
+              <h6 class="fw-bold">DESCRIPTION</h6>
+              <hr>
+
+              <h6 class="fw-bold">WHAT TO SEE HERE</h6>
+              <hr>
+
+
+              <h6 class="fw-bold">REVIEWS</h6>
+              <hr>
+              <div class="col-md-6 text-md-start text-center">
+                <h5 class="fw-bold">Jean Cu</h5>
+
+                <div class="stars mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="review-text">
+                  Love the people. Love the coffee. Mwah mwah!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="localModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE CAROUSEL -->
+          <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+                  class="d-block w-100">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+            <div class="row mb-3">
+              <div class="col-md-8">
+                <small class="text-muted">LAND OF THE RISING SUN</small>
+                <h4 class="fw-bold">JAPAN</h4>
+                <p class="text-muted">
+                  Indulge in the harmony of tradition and innovation.
+                </p>
+              </div>
+
+              <h6 class="fw-bold">DESCRIPTION</h6>
+              <hr>
+
+              <h6 class="fw-bold">WHAT TO SEE HERE</h6>
+              <hr>
+
+
+              <h6 class="fw-bold">REVIEWS</h6>
+              <hr>
+              <div class="col-md-6 text-md-start text-center">
+                <h5 class="fw-bold">Jean Cu</h5>
+
+                <div class="stars mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="review-text">
+                  Love the people. Love the coffee. Mwah mwah!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRENDING PACKAGES -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4" id="trendingPackages">Trending Packages</h2>
+
+    <div class="row">
+
+      <!-- CARD 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img
+            src="https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2019-02/Central%20Vietnam%20Travel%20Guide-2_0.jpg?itok=tkYt3Jqd"
+            class="card-img-top">
+          <div class="card-body">
+            <small class="text-muted">CENTRAL VIETNAM</small>
+            <h5>THE WONDERS OF CENTRAL VIETNAM</h5>
+            <p class="mb-1">5 Days</p>
+            <p class="mb-1">★ 4.5 (75 reviews)</p>
+            <p class="mb-2">From ₱25,000</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tourModal1">Learn
+              More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            class="card-img-top">
+          <div class="card-body">
+            <small class="text-muted">Category</small>
+            <h5>Singapore</h5>
+            <p class="mb-1">5 Days</p>
+            <p class="mb-1">★ 4.5 (75 reviews)</p>
+            <p class="mb-2">From ₱25,000</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tourModal2">Learn
+              More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            class="card-img-top">
+          <div class="card-body">
+            <small class="text-muted">Category</small>
+            <h5>Local</h5>
+            <p class="mb-1">5 Days</p>
+            <p class="mb-1">★ 4.5 (75 reviews)</p>
+            <p class="mb-2">From ₱25,000</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tourModal3">Learn
+              More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="tourModal1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <!-- IMAGE -->
+          <div class="tour-image">
+            <img
+              src="https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2019-02/Central%20Vietnam%20Travel%20Guide-2_0.jpg?itok=tkYt3Jqd"
+              class="w-100">
+          </div>
+
+          <!-- CONTENT -->
+          <div class="p-4">
+
+            <div class="container py-4">
+              <div class="row">
+
+                <!-- LEFT SIDE -->
+                <div class="col-md-8">
+
+                  <!-- HEADER -->
+                  <div class="mb-3">
+                    <small class="text-muted">5 DAYS 4 NIGHTS</small>
+                    <h2 class="fw-bold text-primary">THE WONDERS OF CENTRAL VIETNAM</h2>
+                    <p class="text-muted">(DA NANG, HOI AN & HUE)</p>
+                  </div>
+
+                  <div class="mb-4">
+                    <h5 class="text-primary fw-bold">KEY HIGHLIGHTS</h5>
+                    <ul>
+                      <li>Stunning city views, beaches, and rich culture</li>
+                      <li>Cable car ride to Ba Na Hills & Golden Bridge</li>
+                      <li>Explore Hue’s imperial heritage and ancient wonders</li>
+                      <li>Visit Hoi An’s lantern streets and peaceful rivers</li>
+                      <li>Enjoy local markets, shopping, and nightlife</li>
+                    </ul>
+                  </div>
+                  <!-- ITINERARY -->
+                  <h6 class="fw-bold">ITINERARY</h6>
+                  <hr>
+
+                  <ul class="small">
+                    <li><strong>DAY 1:</strong> Arrival in Da Nang – City Tour</li>
+                    <li><strong>DAY 2:</strong> Da Nang → Hue – Imperial City Tour</li>
+                    <li><strong>DAY 3:</strong> Hoi An Tour – Coconut Village & Lantern City</li>
+                    <li><strong>DAY 4:</strong> Ba Na Hills – Golden Bridge Experience</li>
+                    <li><strong>DAY 5:</strong> Departure</li>
+                  </ul>
+
+                  <!-- BOOKING CONDITIONS -->
+                  <h6 class="fw-bold mt-3">BOOKING CONDITIONS</h6>
+                  <hr>
+
+                  <ul class="small">
+                    <li>USD 200 deposit required (non-refundable)</li>
+                    <li>Rates subject to availability and change</li>
+                    <li>Minimum of 15 travelers required</li>
+                    <li>Cancellation charges may apply</li>
+                  </ul>
+
+                </div>
+
+                <!-- RIGHT SIDE (PRICING CARD) -->
+                <div class="col-md-4">
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+
+                      <p class="text-muted mb-1">FROM</p>
+                      <h3 class="text-danger fw-bold">USD 689–799</h3>
+                      <p class="text-muted">per person</p>
+
+                      <hr>
+
+                      <h6 class="fw-bold">INCLUSIONS</h6>
+                      <ul class="list-unstyled">
+                        <li>✈️ Roundtrip Airfare</li>
+                        <li>🏨 4-Star Hotel (4 Nights)</li>
+                        <li>🚌 Transfers & Tours</li>
+                        <li>🍽 Meals (as per itinerary)</li>
+                        <li>🧭 English Tour Guide</li>
+                        <li>🛡 Travel Insurance</li>
+                      </ul>
+
+                      <hr>
+
+                      <h6 class="fw-bold">EXCLUSIONS</h6>
+                      <ul class="list-unstyled">
+                        <li>Travel Tax (PHP 1,620)</li>
+                        <li>Airline Taxes & Tipping Fees</li>
+                        <li>Personal Expenses</li>
+                        <li>Visa (if applicable)</li>
+                      </ul>
+
+                      <hr>
+
+                      <p class="text-muted mb-1 center">AVAILABLE DATES</p>
+                      <strong class="center">May 26, 2026</strong><br>
+                      <strong class="center">June 9, 2026</strong><br>
+                      <strong class="center">July 24, 2026</strong>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a class="btn btn-dark" href="book.html" role="button">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+</html>
