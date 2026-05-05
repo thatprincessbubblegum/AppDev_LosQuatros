@@ -27,6 +27,23 @@
   background-color: transparent !important; /* Removes the white background */
   border-bottom: none !important; /* Removes that thin gray line */
 }
+
+.navbar-brand {
+    /* 1. The Background: Dark and semi-transparent (like the image) */
+    background-color: rgba(121, 116, 116, 0.45); 
+    
+    /* 2. The Shape: Padding and rounded corners like a button */
+    padding: 5px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* 5. Modern Blur: Makes the background under the button look smooth */
+    backdrop-filter: blur(0px);
+
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
   .navbar-nav .nav-link, 
   .navbar-brand {
     color: #ffffff !important; 
@@ -51,7 +68,31 @@
     justify-content: center;
     color: white;
   }
- 
+/* Card fit*/
+ .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* 2. Make all cards the same height in the row */
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 3. Push the 'Learn More' buttons to the very bottom so they align */
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-body .btn {
+    margin-top: auto;
+    width: fit-content; /* Keeps the button from stretching too wide */
+  }
+  
  .dest-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -126,6 +167,7 @@
       background-image: url('https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png');
     }
 
+    
     .tour-image img {
       height: 300px;
       /* adjust this value */
