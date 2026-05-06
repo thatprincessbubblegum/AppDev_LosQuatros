@@ -1,122 +1,144 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Aerostar Travel & Tours</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <title>Aerostar Travel & Tours</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body {
+      background: #f8f8f8;
+    }
 
-    <style>
-      body {
-        background: #f8f8f8;
-      }
+    .page-title {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
 
-      .section-card {
-        background: #fff;
-        border: 1px solid #ccc;
-        padding: 24px;
-        height: 100%;
-      }
+    .booking-wrapper {
+      border: 1px solid #ccc;
+      background: #fff;
+    }
 
-      .placeholder-img {
-        background: #ddd;
-        width: 100%;
-        aspect-ratio: 4/3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #999;
-        font-size: 13px;
-        border: 1px solid #ccc;
-        position: relative;
-        overflow: hidden;
-      }
+    /* LEFT PANEL */
+    .left-panel {
+      border-right: 1px solid #ccc;
+      padding: 24px;
+    }
 
-      /* X placeholder lines */
-      .placeholder-img::before,
-      .placeholder-img::after {
-        content: '';
-        position: absolute;
-        width: 141%;
-        height: 1px;
-        background: #bbb;
-        top: 50%;
-        left: -20%;
-      }
-      .placeholder-img::before { transform: rotate(atan2(3,4)); }
-      .placeholder-img::after  { transform: rotate(-atan2(3,4)); }
+    .section-title {
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
 
-      .booking-summary-body {
-        min-height: 120px;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 12px;
-      }
+    .placeholder-img {
+      background: #ddd;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: 1px solid #ccc;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .placeholder-img::before,
+    .placeholder-img::after {
+      content: '';
+      position: absolute;
+      width: 141%;
+      height: 1px;
+      background: #aaa;
+      top: 50%;
+      left: -20%;
+    }
+    .placeholder-img::before { transform: rotate(36.87deg); }
+    .placeholder-img::after  { transform: rotate(-36.87deg); }
 
-      label.fw-bold {
-        font-size: 13px;
-      }
+    .field-label {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
 
-      .add-guest-btn {
-        background: #e0e0e0;
-        border: none;
-        width: 100%;
-        padding: 14px;
-        font-weight: bold;
-        font-size: 14px;
-        text-align: center;
-        cursor: pointer;
-      }
+    .booking-summary-section {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 16px 0;
+      margin: 16px 0;
+    }
 
-      .add-guest-btn:hover {
-        background: #cfcfcf;
-      }
+    .summary-line {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 2;
+    }
+    .summary-line span {
+      font-weight: 400;
+      color: #444;
+    }
 
-      .proceed-btn {
-        background: #222;
-        color: #fff;
-        border: none;
-        width: 100%;
-        padding: 12px;
-        font-weight: bold;
-        font-size: 14px;
-        letter-spacing: 0.5px;
-      }
+    .submit-btn {
+      background: #222;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: #000; }
 
-      .proceed-btn:hover {
-        background: #000;
-      }
+    /* RIGHT PANEL */
+    .right-panel {
+      padding: 28px 32px;
+    }
 
-      .addon-price {
-        width: 90px;
-        text-align: center;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        padding: 4px 8px;
-        background: #fff;
-      }
+    .guest-pill {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
 
-      .summary-meta {
-        font-size: 14px;
-        line-height: 1.8;
-      }
+    .travel-docs-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      margin: 16px 0 12px;
+    }
 
-      hr.thin {
-        border-color: #aaa;
-        margin: 16px 0;
-      }
-    </style>
+    .guest-block {
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #ccc;
+    }
+    .guest-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-light border-bottom">
   <div class="container">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand fw-bold" href="#">Logo</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="destinations&packages.html">Destinations & Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="destinationsandpackages.html">Destinations & Packages</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item ms-3">
@@ -127,168 +149,128 @@
   </div>
 </nav>
 
+<!-- WARNING MODAL -->
+<div class="modal fade" id="visaWarningModal" tabindex="-1" aria-labelledby="visaWarningModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold text-primary" id="visaWarningModalLabel">
+          <i class="bi bi-info-circle-fill me-2"></i>Important Visa Information
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="alert alert-light border-start border-4 border-primary bg-white p-3 mb-3" style="border-radius: 16px;">
+          <ul class="mb-0 ps-3">
+            <li class="mb-2">✈️ Agency only accommodates <strong class="text-primary">tourist visas</strong>.</li>
+            <li class="mb-2">📅 Visa is viable for up to <strong class="text-primary">three months</strong> from issuance.</li>
+            <li>⚠️ Agency <strong class="text-primary">cannot guarantee visa approval</strong>; final decision rests with the embassy.</li>
+          </ul>
+        </div>
+        <div class="text-muted small mt-2">
+          <i class="bi bi-check-circle-fill text-primary me-1"></i> By continuing, you acknowledge these terms.
+        </div>
+      </div>
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-primary px-4 py-2" data-bs-dismiss="modal" style="border-radius: 50px;">
+          Continue <i class="bi bi-arrow-right-short ms-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script to auto-show the modal -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var warningModal = new bootstrap.Modal(document.getElementById('visaWarningModal'), {
+      backdrop: 'static',
+      keyboard: false
+    });
+    warningModal.show();
+  });
+</script>
+
 <!-- PAGE TITLE -->
 <div class="container my-4 text-center">
-  <h1 class="fw-bold" style="font-size: 2.4rem; letter-spacing: 1px;">BOOK YOUR ADVENTURE</h1>
+  <h1 class="page-title">BOOK YOUR ADVENTURE</h1>
 </div>
 
 <!-- MAIN LAYOUT -->
 <div class="container mb-5">
-  <div class="row g-0 border" style="border-color: #ccc !important;">
+  <form id="bookingForm">
+    <div class="row g-0 booking-wrapper">
 
-    <!-- LEFT COLUMN: BOOKING DETAILS -->
-    <div class="col-md-3 border-end section-card">
-      <h5 class="fw-bold mb-3">BOOKING DETAILS</h5>
+      <!-- LEFT PANEL -->
+      <div class="col-md-4 col-lg-3 left-panel">
 
-      <!-- PACKAGE -->
-      <label class="fw-bold mb-1">PACKAGE</label>
-      <input type="text" class="form-control form-control-sm mb-3" placeholder="">
+        <!-- Package Image Placeholder -->
+        <div class="placeholder-img"></div>
 
-      <!-- GUESTS -->
-      <label class="fw-bold mb-1">GUESTS</label>
-      <input type="number" class="form-control form-control-sm mb-3" placeholder="" min="1">
-
-      <!-- DATE -->
-      <div class="mb-3">
-        <label class="me-2 fw-bold">Select Date:</label>
-        <input type="date" class="form-control form-control-sm mt-1">
-      </div>
-
-      <!-- PACKAGE IMAGE -->
-      <div class="placeholder-img mb-3"></div>
-
-      <!-- ACCOMMODATION -->
-      <label class="fw-bold mb-2 d-block">ACCOMODATION</label>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" id="hotel">
-        <label class="form-check-label" for="hotel">Hotel</label>
-      </div>
-      <div class="form-check mb-1">
-        <input class="form-check-input" type="checkbox" id="hostel">
-        <label class="form-check-label" for="hostel">Hostel</label>
-      </div>
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="lorem">
-        <label class="form-check-label" for="lorem">Lorem Ipsum</label>
-      </div>
-
-      <hr class="thin">
-
-      <!-- BOOKING META -->
-      <div class="summary-meta">
-        <strong>SELECTED DATE:</strong> 07-17-24<br>
-        <strong>DURATION:</strong> 3 Days<br>
-        <strong>GUESTS:</strong> 2 Adults
-      </div>
-    </div>
-
-    <!-- MIDDLE COLUMN: IMAGE + BOOKING SUMMARY -->
-    <div class="col-md-3 border-end d-flex flex-column p-0">
-
-      <!-- PACKAGE IMAGE -->
-      <div class="placeholder-img" style="aspect-ratio: 1/1; flex-shrink: 0;"></div>
-
-      <!-- BOOKING SUMMARY -->
-      <div class="section-card flex-grow-1 d-flex flex-column border-top">
-        <h5 class="fw-bold mb-3">BOOKING SUMMARY</h5>
-
-        <!-- Summary Items -->
-        <div class="booking-summary-body flex-grow-1">
-        </div>
-
-        <!-- Total -->
+        <!-- Selection Type (Destination or Package) -->
         <div class="mb-3">
-          <strong>TOTAL</strong>
-        </div>
-
-        <!-- Proceed Button -->
-        <button class="proceed-btn">[ PROCEED TO PAYMENT ]</button>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN: PASSENGER DETAILS -->
-    <div class="col-md-6 section-card">
-      <h5 class="fw-bold">PASSENGER DETAILS:</h5>
-      <p class="fw-bold text-muted mb-3" style="font-size: 14px;">[GUEST 1 - PRIMARY]</p>
-
-      <!-- NAME -->
-      <div class="row g-2 mb-2">
-        <div class="col-6">
-          <input type="text" class="form-control form-control-sm" placeholder="First Name">
-        </div>
-        <div class="col-6">
-          <input type="text" class="form-control form-control-sm" placeholder="Last Name">
-        </div>
-      </div>
-
-      <!-- DATE OF BIRTH + NATIONALITY -->
-      <div class="row g-2 mb-2">
-        <div class="col-6">
-          <input type="date" class="form-control form-control-sm" placeholder="Date of Birth">
-        </div>
-        <div class="col-6">
-          <select class="form-select form-select-sm">
-            <option value="">Nationality</option>
-            <option>Filipino</option>
-            <option>American</option>
-            <option>Other</option>
+          <div class="field-label">I want to book a:</div>
+          <select id="selectionType" class="form-control form-control-sm">
+            <option value="Destination">Destination</option>
+            <option value="Package">Package</option>
           </select>
         </div>
-      </div>
 
-      <!-- EMAIL + PHONE -->
-      <div class="row g-2 mb-2">
-        <div class="col-6">
-          <input type="email" class="form-control form-control-sm" placeholder="Email">
+        <!-- Selection Name (Destination or Package name) -->
+        <div class="mb-3">
+          <div class="field-label">Name of Destination / Package</div>
+          <input type="text" id="selectionName" class="form-control form-control-sm" placeholder="">
         </div>
-        <div class="col-6">
-          <input type="tel" class="form-control form-control-sm" placeholder="Phone Number">
+
+        <!-- Number of Guests -->
+        <div class="mb-3">
+          <div class="field-label">Number of Guests</div>
+          <input type="number" id="numGuests" class="form-control form-control-sm" min="1" max="20" placeholder="">
+        </div>
+
+        <!-- Start Date -->
+        <div class="mb-3">
+          <div class="field-label">Start Date:</div>
+          <input type="date" id="startDate" class="form-control form-control-sm">
+        </div>
+
+        <!-- End Date -->
+        <div class="mb-3">
+          <div class="field-label">End Date:</div>
+          <input type="date" id="endDate" class="form-control form-control-sm">
+        </div>
+
+        <!-- BOOKING SUMMARY -->
+        <div class="booking-summary-section">
+          <div class="section-title">BOOKING SUMMARY</div>
+          <div class="summary-line">Selection Type: <span id="summaryType">—</span></div>
+          <div class="summary-line">Selection Name: <span id="summaryName">—</span></div>
+          <div class="summary-line">Start Date: <span id="summaryStart">—</span></div>
+          <div class="summary-line">End Date: <span id="summaryEnd">—</span></div>
+          <div class="summary-line">Total Duration: <span id="summaryDuration">—</span> days</div>
+          <div class="summary-line">Guests: <span id="summaryGuests">—</span></div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="submit-btn mb-2">Submit</button>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="col-md-8 col-lg-9 right-panel">
+        <h5 class="section-title mb-3" style="font-size:1.1rem; letter-spacing:1px;">PASSENGER DETAILS:</h5>
+
+        <!-- Guest forms injected here -->
+        <div id="guestContainer">
+          <p class="text-muted" style="font-size:13px;">Enter number of guests to fill in passenger details.</p>
         </div>
       </div>
 
-      <!-- PASSPORT -->
-      <div class="row g-2 mb-3">
-        <div class="col-6">
-          <input type="text" class="form-control form-control-sm" placeholder="Passport Number">
-        </div>
-        <div class="col-6">
-          <input type="date" class="form-control form-control-sm" placeholder="Passport Expiry">
-        </div>
-      </div>
-
-      <!-- OPTIONAL ADD-ONS -->
-      <label class="fw-bold mb-2 d-block">OPTIONAL ADD-ONS</label>
-
-      <div class="d-flex align-items-center mb-2 gap-2">
-        <input class="form-check-input m-0" type="checkbox" id="transfer">
-        <label class="form-check-label flex-grow-1 ms-1" for="transfer">Airport transfer</label>
-        <span class="addon-price">₱500</span>
-      </div>
-
-      <div class="d-flex align-items-center mb-2 gap-2">
-        <input class="form-check-input m-0" type="checkbox" id="insurance">
-        <label class="form-check-label flex-grow-1 ms-1" for="insurance">Travel Insurance</label>
-        <span class="addon-price">₱750</span>
-      </div>
-
-      <div class="d-flex align-items-center mb-4 gap-2">
-        <input class="form-check-input m-0" type="checkbox" id="upgrade">
-        <label class="form-check-label flex-grow-1 ms-1" for="upgrade">Room Upgrade</label>
-        <span class="addon-price">₱2,500</span>
-      </div>
-
-      <!-- ADD GUEST -->
-      <button class="add-guest-btn mb-3">ADD GUEST 2 DETAILS (2 Adults Selected)</button>
-
-      <!-- BOOKING FAQS -->
-      <div class="text-center">
-        <a href="#" class="text-muted" style="font-size: 14px;">Booking FAQs</a>
-      </div>
     </div>
-
-  </div>
+  </form>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="booking.js"></script>
 </body>
 </html>
