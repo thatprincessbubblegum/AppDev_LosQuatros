@@ -1,7 +1,9 @@
- .hero-section {
+
+
+.hero-section {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://horizontalfallsadventures.com.au/wp-content/uploads/2023/09/HFSA-WA-experiences-12.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center; 
     min-height: 400px; /* Adjust this to control how much image shows */
     display: flex;
     flex-direction: column;
@@ -19,6 +21,89 @@
     font-weight: 500;
     color: #333;
   }
+
+.Trending-Destination-bg{
+    /* The Ocean Background Image */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                url('https://cdn.britannica.com/66/194766-050-5908DD25/canyon-swell-reef-sunlight-water-surface-Pacific.jpg');
+    
+    /* SCROLL EFFECT: This makes the image stay fixed while the page moves */
+    background-attachment: fixed; 
+    
+    /* Standard positioning to make it look good */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    margin-top: 0 !important; 
+}
+
+.Trending-Destination-bg .text-white {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.Trending-Destination-bg .section-title {
+    color: #ffffff !important;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 50px !important;
+}
+
+
+.dest-card {
+    border-radius: 15px; /* Rounds the corners */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Glassy border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy pop transition */
+}
+
+/* HOVER EFFECT */
+.dest-card:hover {
+    transform: scale(1.05) translateY(-10px); /* Lifts and grows */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+}
+
+/* TEXT INSIDE CARDS */
+.dest-card span {
+    background: rgba(0, 0, 0, 0.5); /* Dark pill behind text for readability */
+    padding: 8px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Trending-Packages-bg {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://cdn.britannica.com/66/194766-050-5908DD25/canyon-swell-reef-sunlight-water-surface-Pacific.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates the scrolling move effect */
+    width: 100%;
+    margin-top: 0 !important;
+}
+
+/* Ensures the Trending Packages title is visible on the dark background */
+.Trending-Packages-bg h2 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    font-weight: bold;
+}
+
+/* Optional: Make the white cards slightly transparent to blend with the sea */
+.Trending-Packages-bg .card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
 
 .navbar {
   position: absolute; /* Sits on top of the carousel */
