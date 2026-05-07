@@ -163,4 +163,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const successModal = new bootstrap.Modal(document.getElementById('bookingSuccessModal'));
     successModal.show();
   });
+  
+  // Reset form when success modal is closed
+  const successModalElement = document.getElementById('bookingSuccessModal');
+  successModalElement.addEventListener('hidden.bs.modal', function() {
+    resetBookingForm();
+  });
 });
