@@ -12,6 +12,6 @@
       // Wait 1.5 seconds, then actually go to the booking page
       setTimeout(() => {
         window.location.href = "book.html";
-      }, 1500);
+      }, 1000);
     });
   }
