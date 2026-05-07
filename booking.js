@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Form submission
   document.getElementById('bookingForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const ticketID = 'AB-' + Date.now().toString().slice(-6);
-    alert('Booking Submitted Successfully!\nTicket ID: ' + ticketID);
+    const successModal = new bootstrap.Modal(document.getElementById('bookingSuccessModal'));
+    successModal.show();
   });
 });
