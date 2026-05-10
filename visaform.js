@@ -109,19 +109,18 @@ document.addEventListener("DOMContentLoaded", function () {
             applicants: applicants
         };
 
+        const successModal = new bootstrap.Modal(document.getElementById('visaSuccessModal'));
+        successModal.show();
+
         // Save to localStorage
         let inquiries = JSON.parse(localStorage.getItem("aerostarInquiries")) || [];
         inquiries.push(submissionData);
         localStorage.setItem("aerostarInquiries", JSON.stringify(inquiries));
 
-        document.getElementById('visaForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const successModal = new bootstrap.Modal(document.getElementById('visaSuccessModal'));
-            successModal.show();
-  });
         // Reset
         visaForm.reset();
         applicantsContainer.innerHTML = "";
         document.getElementById("destHeader").classList.add("d-none");
+
     });
 });
