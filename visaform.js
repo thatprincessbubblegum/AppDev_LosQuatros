@@ -114,8 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
         inquiries.push(submissionData);
         localStorage.setItem("aerostarInquiries", JSON.stringify(inquiries));
 
-        alert("Inquiry sent succesfully. We will be contacting you shortly via email.\nTicket ID: " + submissionData.ticketID);
-
+        document.getElementById('visaForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const successModal = new bootstrap.Modal(document.getElementById('visaSuccessModal'));
+            successModal.show();
+  });
         // Reset
         visaForm.reset();
         applicantsContainer.innerHTML = "";
