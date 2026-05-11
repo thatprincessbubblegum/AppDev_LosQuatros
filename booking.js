@@ -1,5 +1,3 @@
-// booking.js - All JavaScript functionality for the booking page
-
 const selectionOptions = {
   Destination: [
     'Japan', 'South Korea', 'China', 'United States',
@@ -167,6 +165,102 @@ function enforceDateConstraints() {
   });
 }
 
+// Validation
+function validateForm() {
+  // Destination or Package validation
+  const selectionName = document.getElementById('selectionName');
+  if (!selectionName.value || selectionName.value === '') {
+    alert('Please select a destination or package.');
+    return false;
+  }
+
+  // Guest number validation
+  const numGuestsInput = document.getElementById('numGuests');
+  let numGuests = parseInt(numGuestsInput.value);
+  if (isNaN(numGuests) || numGuests < 1) {
+    alert('Please enter a valid number of guests (at least 1).');
+    return false;
+  }
+
+  // Start date and end date validation
+  const startDate = document.getElementById('startDate').value;
+  const endDate = document.getElementById('endDate').value;
+  if (!startDate) {
+    alert('Please select a start date.');
+    return false;
+  }
+  if (!endDate) {
+    alert('Please select an end date.');
+    return false;
+  }
+  if (new Date(endDate) < new Date(startDate)) {
+    alert('End date cannot be before start date.');
+    return false;
+  }
+
+  // Guest blocks validation
+  const guestBlocks = document.querySelectorAll('.guest-block');
+  if (guestBlocks.length !== numGuests) {
+    alert('Please enter the number of guests first, then fill in all guest details.');
+    return false;
+  }
+
+  for (let i = 0; i < guestBlocks.length; i++) {
+    const block = guestBlocks[i];
+    const firstName = block.querySelector('input[placeholder="First Name"]').value.trim();
+    const lastName = block.querySelector('input[placeholder="Last Name"]').value.trim();
+    const dob = block.querySelector('input[type="date"]').value;
+    const guestType = block.querySelector('.guest-type-select').value;
+    const emailInput = block.querySelector('input[type="email"]');
+    const passportNum = block.querySelector('input[placeholder="Passport Number"]').value.trim();
+    const passportExpiry = block.querySelector('input[placeholder="Passport Expiry"]').value;
+    const nationality = block.querySelector('input[placeholder="Nationality"]').value.trim();
+
+    if (!firstName) {
+      alert(`Guest ${i+1}: First name is required.`);
+      return false;
+    }
+    if (!lastName) {
+      alert(`Guest ${i+1}: Last name is required.`);
+      return false;
+    }
+    if (!dob) {
+      alert(`Guest ${i+1}: Date of birth is required.`);
+      return false;
+    }
+    if (!guestType) {
+      alert(`Guest ${i+1}: Guest type is required.`);
+      return false;
+    }
+    // Primary guest (index 0) must have email
+    if (i === 0 && (!emailInput || !emailInput.value.trim())) {
+      alert(`Primary guest email address is required.`);
+      return false;
+    }
+    // Validate passport details for all guests
+    if (!passportNum) {
+      alert(`Guest ${i+1}: Passport number is required.`);
+      return false;
+    }
+    if (!passportExpiry) {
+      alert(`Guest ${i+1}: Passport expiry date is required.`);
+      return false;
+    }
+    if (!nationality) {
+      alert(`Guest ${i+1}: Nationality is required.`);
+      return false;
+    }
+    // Check passport expiry is not in the past
+    const today = new Date().toISOString().split('T')[0];
+    if (passportExpiry < today) {
+      alert(`Guest ${i+1}: Passport expiry date cannot be in the past.`);
+      return false;
+    }
+  }
+
+  return true;
+}
+
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Event listeners
@@ -185,9 +279,15 @@ document.addEventListener('DOMContentLoaded', function() {
   populateSelectionName(document.getElementById('selectionType').value);
   updateSummary();
 
-  // Form submission
+  // Form submission with validation
   document.getElementById('bookingForm').addEventListener('submit', function (e) {
     e.preventDefault();
+    
+    // Validate all fields before showing success modal
+    if (!validateForm()) {
+      return; // Stop submission if validation fails
+    }
+    
     const successModal = new bootstrap.Modal(document.getElementById('bookingSuccessModal'));
     successModal.show();
   });
