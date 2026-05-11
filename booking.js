@@ -10,6 +10,49 @@ const selectionOptions = {
   ]
 };
 
+// Image mapping for Destinations and Packages
+const destinationImages = {
+  'Japan': 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&h=600',
+  'South Korea': 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=800&h=600',
+  'China': 'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=800&h=600',
+  'United States': 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=800&h=600',
+  'Spain': 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&h=600',
+  'Boracay': 'https://images.unsplash.com/photo-1553195029-754fbd369560?auto=format&fit=crop&w=800&h=600',
+  'Manila': 'https://images.unsplash.com/photo-1598258710957-db8614c2881e?auto=format&fit=crop&w=800&h=600',
+  'Palawan': 'https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&h=600'
+};
+
+const packageImages = {
+  'The Wonders of Central Vietnam': 'https://image.vietnam.travel/sites/default/files/styles/top_banner/public/2019-02/Central%20Vietnam%20Travel%20Guide-2_0.jpg?itok=tkYt3Jqd',
+  'Jeju Island Spring Wonders': 'https://www.foodandwine.com/thmb/sRu0hfyvMYCMFmS-pi7gYaOuzvQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Jeju-Island-Hawaii-of-Korea-FT-BLOG0723-8e127cbf94c048ffa2b59f12070af3fb.jpg',
+  'Funtastic Nagoya Saver': 'https://a.cdn-hotels.com/gdcs/production35/d333/c8b7bf51-d93e-497c-ad33-a9928720ae85.jpg'
+};
+
+// Default fallback image
+const defaultImage = 'https://via.placeholder.com/400x300?text=Select+a+Destination+or+Package';
+
+function updateDynamicImage() {
+  const type = document.getElementById('selectionType').value;
+  const name = document.getElementById('selectionName').value;
+  const imgElement = document.getElementById('dynamicImage');
+  
+  if (!imgElement) return;
+  
+  if (!name || name === 'Select a destination' || name === 'Select a package') {
+    imgElement.src = defaultImage;
+    return;
+  }
+  
+  let imageUrl = defaultImage;
+  if (type === 'Destination') {
+    imageUrl = destinationImages[name] || defaultImage;
+  } else if (type === 'Package') {
+    imageUrl = packageImages[name] || defaultImage;
+  }
+  
+  imgElement.src = imageUrl;
+}
+
 function populateSelectionName(type) {
   const select = document.getElementById('selectionName');
   const label = type === 'Package' ? 'Select a package' : 'Select a destination';
@@ -266,8 +309,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Event listeners
   document.getElementById('selectionType').addEventListener('change', function() {
     populateSelectionName(this.value);
+	updateDynamicImage();
   });
-  document.getElementById('selectionName').addEventListener('change', updateSummary);
+  document.getElementById('selectionName').addEventListener('change', function() {
+    updateSummary();
+    updateDynamicImage();
+  });
   document.getElementById('numGuests').addEventListener('input', function () {
     const val = parseInt(this.value);
     renderGuests(val);
@@ -278,6 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
   enforceDateConstraints();
   populateSelectionName(document.getElementById('selectionType').value);
   updateSummary();
+  updateDynamicImage();
 
   // Form submission with validation
   document.getElementById('bookingForm').addEventListener('submit', function (e) {
