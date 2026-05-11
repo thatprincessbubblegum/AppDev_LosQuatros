@@ -1,202 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Aerostar Travel & Tours | Booking Inquiry</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="book.css">
 </head>
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container.mb-5 {
+    flex: 1 0 auto;
+  }
+
+  .site-footer {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px 40px;
+    font-size: 13px;
+    margin-top: auto;
+    width: 100%;
+  }
+</style>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg bg-success border-bottom">
-  <div class="container">
-    <img src="logo.png" alt="Logo" height="50">
-    
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="destinationsandpackages.html">Destinations & Packages</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-3">
-          <a class="btn btn-dark" href="book.html">Book</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-success border-bottom">
+    <div class="container">
+      <img src="logo.png" alt="Logo" height="50">
 
-<!-- WARNING MODAL -->
-<div class="modal fade" id="visaWarningModal" tabindex="-1" aria-labelledby="visaWarningModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title fw-bold text-primary" id="visaWarningModalLabel">
-          <i class="bi bi-info-circle-fill me-2"></i>Important Booking Information
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body pt-0">
-        <div class="alert alert-light bg-white p-3 mb-3" style="border-radius: 16px;">
-          <ul class="mb-0 ps-3">
-            <li class="mb-2">📋 This is a <strong class="text-primary">booking inquiry</strong>. This will <strong>not</strong> guarantee nor confirm that the booking is final.</li>
-            <li class="mb-2">🛂 This booking does <strong>not</strong> include the <strong class="text-primary">VISA</strong> required to enter the country if the guest/s does not have one yet. For more information, please visit the <a href="services.html" class="text-primary fw-bold">Services Tab</a> for more information.</li>
-            <li>📧 Please take note that the agency will use the <strong class="text-primary">Primary Guest's Email</strong> to communicate regarding the status and availability of the booking. We will not respond to any other email provided otherwise.</li>
-          </ul>
-        </div>
-        <div class="text-muted small mt-2">
-          <i class="bi bi-check-circle-fill text-primary me-1"></i> By continuing, you acknowledge these terms.
-        </div>
-      </div>
-      <div class="modal-footer border-0 pt-0">
-        <button type="button" class="btn btn-primary px-4 py-2" data-bs-dismiss="modal" style="border-radius: 50px;">
-          Continue <i class="bi bi-arrow-right-short ms-1"></i>
-        </button>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinationsandpackages.html">Destinations & Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-3">
+            <a class="btn btn-dark" href="book.html">Book</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-</div>
+  </nav>
 
-<!-- Script to auto-show the modal -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var warningModal = new bootstrap.Modal(document.getElementById('visaWarningModal'), {
-      backdrop: 'static',
-      keyboard: false
+  <!-- WARNING MODAL -->
+  <div class="modal fade" id="visaWarningModal" tabindex="-1" aria-labelledby="visaWarningModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold text-primary" id="visaWarningModalLabel">
+            <i class="bi bi-info-circle-fill me-2"></i>Important Booking Information
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="alert alert-light bg-white p-3 mb-3" style="border-radius: 16px;">
+            <ul class="mb-0 ps-3">
+              <li class="mb-2">📋 This is a <strong class="text-primary">booking inquiry</strong>. This will
+                <strong>not</strong> guarantee nor confirm that the booking is final.</li>
+              <li class="mb-2">🛂 This booking does <strong>not</strong> include the <strong
+                  class="text-primary">VISA</strong> required to enter the country if the guest/s does not have one yet.
+                For more information, please visit the <a href="services.html" class="text-primary fw-bold">Services
+                  Tab</a> for more information.</li>
+              <li>📧 Please take note that the agency will use the <strong class="text-primary">Primary Guest's
+                  Email</strong> to communicate regarding the status and availability of the booking. We will not
+                respond to any other email provided otherwise.</li>
+            </ul>
+          </div>
+          <div class="text-muted small mt-2">
+            <i class="bi bi-check-circle-fill text-primary me-1"></i> By continuing, you acknowledge these terms.
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-primary px-4 py-2" data-bs-dismiss="modal" style="border-radius: 50px;">
+            Continue <i class="bi bi-arrow-right-short ms-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script to auto-show the modal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var warningModal = new bootstrap.Modal(document.getElementById('visaWarningModal'), {
+        backdrop: 'static',
+        keyboard: false
+      });
+      warningModal.show();
     });
-    warningModal.show();
-  });
-</script>
+  </script>
 
-<!-- PAGE TITLE -->
-<div class="container my-4 text-center">
-  <h1 class="page-title">BOOK YOUR ADVENTURE</h1>
-</div>
+  <!-- PAGE TITLE -->
+  <div class="container my-4 text-center">
+    <h1 class="page-title">BOOK YOUR ADVENTURE</h1>
+  </div>
 
-<!-- MAIN LAYOUT -->
-<div class="container mb-5">
-  <form id="bookingForm">
-    <div class="row g-0 booking-wrapper">
+  <!-- MAIN LAYOUT -->
+  <div class="container mb-5">
+    <form id="bookingForm">
+      <div class="row g-0 booking-wrapper">
 
-      <!-- LEFT PANEL -->
-      <div class="col-md-4 col-lg-3 left-panel">
+        <!-- LEFT PANEL -->
+        <div class="col-md-4 col-lg-3 left-panel">
 
-        <!-- Destination or Image Dynamic Image -->
-		<img id="dynamicImage" class="img-fluid" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&h=600" alt="Destination preview" style="width: 100%; border-radius: 8px; margin-bottom: 20px; aspect-ratio: 4/3; object-fit: cover;">
-		
-        <!-- Selection Type (Destination or Package) -->
-        <div class="mb-3">
-          <div class="field-label">I want to book a:</div>
-          <select id="selectionType" class="form-control form-control-sm">
-            <option value="Destination">Destination</option>
-            <option value="Package">Package</option>
-          </select>
+          <!-- Destination or Image Dynamic Image -->
+          <img id="dynamicImage" class="img-fluid"
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&h=600"
+            alt="Destination preview"
+            style="width: 100%; border-radius: 8px; margin-bottom: 20px; aspect-ratio: 4/3; object-fit: cover;">
+
+          <!-- Selection Type (Destination or Package) -->
+          <div class="mb-3">
+            <div class="field-label">I want to book a:</div>
+            <select id="selectionType" class="form-control form-control-sm">
+              <option value="Destination">Destination</option>
+              <option value="Package">Package</option>
+            </select>
+          </div>
+
+          <!-- Selection Name (Destination or Package name) -->
+          <div class="mb-3">
+            <div class="field-label">Name of Destination / Package</div>
+            <select id="selectionName" class="form-control form-control-sm">
+              <option value="" disabled selected>Select a destination</option>
+              <option value="Japan">Japan</option>
+              <option value="South Korea">South Korea</option>
+              <option value="China">China</option>
+              <option value="United States">United States</option>
+              <option value="Spain">Spain</option>
+              <option value="Boracay">Boracay</option>
+              <option value="Manila">Manila</option>
+              <option value="Palawan">Palawan</option>
+            </select>
+          </div>
+
+          <!-- Number of Guests -->
+          <div class="mb-3">
+            <div class="field-label">Number of Guests</div>
+            <input type="number" id="numGuests" class="form-control form-control-sm" min="1" max="20" placeholder="">
+          </div>
+
+          <!-- Start Date -->
+          <div class="mb-3">
+            <div class="field-label">Start Date:</div>
+            <input type="date" id="startDate" class="form-control form-control-sm">
+          </div>
+
+          <!-- End Date -->
+          <div class="mb-3">
+            <div class="field-label">End Date:</div>
+            <input type="date" id="endDate" class="form-control form-control-sm">
+          </div>
+
+          <!-- BOOKING SUMMARY -->
+          <div class="booking-summary-section">
+            <div class="section-title">BOOKING SUMMARY</div>
+            <div class="summary-line">Selection Type: <span id="summaryType">—</span></div>
+            <div class="summary-line">Selection Name: <span id="summaryName">—</span></div>
+            <div class="summary-line">Start Date: <span id="summaryStart">—</span></div>
+            <div class="summary-line">End Date: <span id="summaryEnd">—</span></div>
+            <div class="summary-line">Total Duration: <span id="summaryDuration">—</span> days</div>
+            <div class="summary-line">Guests: <span id="summaryGuests">—</span></div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="submit-btn mb-2">Submit</button>
+
         </div>
 
-        <!-- Selection Name (Destination or Package name) -->
-        <div class="mb-3">
-          <div class="field-label">Name of Destination / Package</div>
-          <select id="selectionName" class="form-control form-control-sm">
-            <option value="" disabled selected>Select a destination</option>
-            <option value="Japan">Japan</option>
-            <option value="South Korea">South Korea</option>
-            <option value="China">China</option>
-            <option value="United States">United States</option>
-            <option value="Spain">Spain</option>
-            <option value="Boracay">Boracay</option>
-            <option value="Manila">Manila</option>
-            <option value="Palawan">Palawan</option>
-          </select>
-        </div>
+        <!-- RIGHT PANEL -->
+        <div class="col-md-8 col-lg-9 right-panel">
+          <h5 class="section-title mb-3" style="font-size:1.1rem; letter-spacing:1px;">PASSENGER DETAILS:</h5>
 
-        <!-- Number of Guests -->
-        <div class="mb-3">
-          <div class="field-label">Number of Guests</div>
-          <input type="number" id="numGuests" class="form-control form-control-sm" min="1" max="20" placeholder="">
+          <!-- Guest forms injected here -->
+          <div id="guestContainer">
+            <p class="text-muted" style="font-size:13px;">Enter number of guests to fill in passenger details.</p>
+          </div>
         </div>
-
-        <!-- Start Date -->
-        <div class="mb-3">
-          <div class="field-label">Start Date:</div>
-          <input type="date" id="startDate" class="form-control form-control-sm">
-        </div>
-
-        <!-- End Date -->
-        <div class="mb-3">
-          <div class="field-label">End Date:</div>
-          <input type="date" id="endDate" class="form-control form-control-sm">
-        </div>
-
-        <!-- BOOKING SUMMARY -->
-        <div class="booking-summary-section">
-          <div class="section-title">BOOKING SUMMARY</div>
-          <div class="summary-line">Selection Type: <span id="summaryType">—</span></div>
-          <div class="summary-line">Selection Name: <span id="summaryName">—</span></div>
-          <div class="summary-line">Start Date: <span id="summaryStart">—</span></div>
-          <div class="summary-line">End Date: <span id="summaryEnd">—</span></div>
-          <div class="summary-line">Total Duration: <span id="summaryDuration">—</span> days</div>
-          <div class="summary-line">Guests: <span id="summaryGuests">—</span></div>
-        </div>
-
-        <!-- Submit -->
-        <button type="submit" class="submit-btn mb-2">Submit</button>
 
       </div>
+    </form>
+  </div>
 
-      <!-- RIGHT PANEL -->
-      <div class="col-md-8 col-lg-9 right-panel">
-        <h5 class="section-title mb-3" style="font-size:1.1rem; letter-spacing:1px;">PASSENGER DETAILS:</h5>
-
-        <!-- Guest forms injected here -->
-        <div id="guestContainer">
-          <p class="text-muted" style="font-size:13px;">Enter number of guests to fill in passenger details.</p>
+  <!-- SUCCESS MODAL -->
+  <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold text-success" id="bookingSuccessModalLabel">
+            <i class="bi bi-check-circle-fill me-2"></i>Booking Submitted Successfully!
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-
-    </div>
-  </form>
-</div>
-
-<!-- SUCCESS MODAL -->
-<div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
-      <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title fw-bold text-success" id="bookingSuccessModalLabel">
-          <i class="bi bi-check-circle-fill me-2"></i>Booking Submitted Successfully!
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="alert alert-light bg-white p-3 mb-3" style="border-radius: 16px;">
-          <p class="mb-0">Thank you for your booking inquiry! We have received your request and will be in touch shortly.</p>
+        <div class="modal-body">
+          <div class="alert alert-light bg-white p-3 mb-3" style="border-radius: 16px;">
+            <p class="mb-0">Thank you for your booking inquiry! We have received your request and will be in touch
+              shortly.</p>
+          </div>
+          <div class="text-muted small">
+            <i class="bi bi-envelope-fill text-success me-1"></i> A confirmation will be sent to the primary guest's
+            email address.
+          </div>
         </div>
-        <div class="text-muted small">
-          <i class="bi bi-envelope-fill text-success me-1"></i> A confirmation will be sent to the primary guest's email address.
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-success px-4 py-2" data-bs-dismiss="modal" style="border-radius: 50px;">
+            Done <i class="bi bi-check-lg ms-1"></i>
+          </button>
         </div>
-      </div>
-      <div class="modal-footer border-0 pt-0">
-        <button type="button" class="btn btn-success px-4 py-2" data-bs-dismiss="modal" style="border-radius: 50px;">
-          Done <i class="bi bi-check-lg ms-1"></i>
-        </button>
       </div>
     </div>
   </div>
-</div>
 
-<!-- COPYRIGHT FOOTER -->
-<footer class="site-footer">
-  <div class="d-flex justify-content-between align-items-center container bgcolor-success">
-    <div class="fw-bold">Aerostar Travel & Tours</div>
-    <div>Copyright @ Aerostar2026</div>
-  </div>
-</footer>
+  <!-- COPYRIGHT FOOTER -->
+  <footer class="site-footer">
+    <div class="d-flex justify-content-between align-items-center container bgcolor-success">
+      <div class="fw-bold">Aerostar Travel & Tours</div>
+      <div>Copyright @ Aerostar2026</div>
+    </div>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="booking.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="booking.js"></script>
 </body>
+
 </html>
