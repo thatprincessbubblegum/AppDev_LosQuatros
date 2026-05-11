@@ -114,19 +114,11 @@
 }
 
 .navbar-brand {
-    /* 1. The Background: Dark and semi-transparent (like the image) */
     background-color: rgba(121, 116, 116, 0.45); 
-    
-    /* 2. The Shape: Padding and rounded corners like a button */
     padding: 5px 16px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    /* 5. Modern Blur: Makes the background under the button look smooth */
     backdrop-filter: blur(0px);
-
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
   }
 
   .navbar-nav .nav-link, 
