@@ -143,6 +143,27 @@
       border-bottom: none;
       margin-bottom: 0;
     }
+	
+	html, body {
+	  height: 100%;
+	  margin: 0;
+	  display: flex;
+	  flex-direction: column;
+	}
+
+	.container.mb-5 {
+	  flex: 1 0 auto;
+	}
+	
+	.site-footer {
+	  background: rgba(255, 255, 255, 0.85);
+	  backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding: 20px 40px;
+      font-size: 13px;
+      margin-top: auto;
+      width: 100%;
+	}
   </style>
 </head>
 <body>
@@ -326,6 +347,14 @@
     </div>
   </div>
 </div>
+
+<!-- COPYRIGHT FOOTER -->
+<footer class="site-footer">
+  <div class="d-flex justify-content-between align-items-center container">
+    <div class="fw-bold">Aerostar Travel & Tours</div>
+    <div>Copyright @ Aerostar2026</div>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="booking.js"></script>
