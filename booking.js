@@ -1,5 +1,30 @@
 // booking.js - All JavaScript functionality for the booking page
 
+const selectionOptions = {
+  Destination: [
+    'Japan', 'South Korea', 'China', 'United States',
+    'Spain', 'Boracay', 'Manila', 'Palawan'
+  ],
+  Package: [
+    'The Wonders of Central Vietnam',
+    'Jeju Island Spring Wonders',
+    'Funtastic Nagoya Saver'
+  ]
+};
+
+function populateSelectionName(type) {
+  const select = document.getElementById('selectionName');
+  const label = type === 'Package' ? 'Select a package' : 'Select a destination';
+  select.innerHTML = `<option value="" disabled selected>${label}</option>`;
+  selectionOptions[type].forEach(function(item) {
+    const opt = document.createElement('option');
+    opt.value = item;
+    opt.textContent = item;
+    select.appendChild(opt);
+  });
+  updateSummary();
+}
+
 function buildGuestBlock(index) {
   const label = index === 0 ? 'PRIMARY' : 'ADDITIONAL';
   return `
@@ -145,8 +170,10 @@ function enforceDateConstraints() {
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Event listeners
-  document.getElementById('selectionType').addEventListener('change', updateSummary);
-  document.getElementById('selectionName').addEventListener('input', updateSummary);
+  document.getElementById('selectionType').addEventListener('change', function() {
+    populateSelectionName(this.value);
+  });
+  document.getElementById('selectionName').addEventListener('change', updateSummary);
   document.getElementById('numGuests').addEventListener('input', function () {
     const val = parseInt(this.value);
     renderGuests(val);
@@ -155,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   enforceDateConstraints();
+  populateSelectionName(document.getElementById('selectionType').value);
   updateSummary();
 
   // Form submission
