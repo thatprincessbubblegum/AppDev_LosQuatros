@@ -29,7 +29,7 @@ const packageImages = {
 };
 
 // Default fallback image
-const defaultImage = 'https://via.placeholder.com/400x300?text=Select+a+Destination+or+Package';
+const defaultImage = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&h=600';
 
 function updateDynamicImage() {
   const type = document.getElementById('selectionType').value;
