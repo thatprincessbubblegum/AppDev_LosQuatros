@@ -6,6 +6,7 @@
   <title>Aerostar Travel & Tours</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="transition.css">
   <style>
 
 
@@ -13,13 +14,17 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f8f9fa;
       margin: 0;
-      padding: 40px ;
-  
+      padding:0 40px ;
+      background-image: 
+      linear-gradient( rgba(100, 98, 98, 0.6)),
+      url(https://static.vecteezy.com/system/resources/previews/012/999/193/large_2x/selective-focus-at-pen-on-plain-notebook-paper-on-working-table-with-blurred-laptop-computer-at-the-background-work-or-study-from-home-concept-new-normal-after-covid-pandemic-free-photo.jpg);
+      background-size: cover;      
+      background-position: center;
     }
 
     .inquiry-section {
       max-width: 1000px;
-       margin-top: 100px;
+      margin-top: 100px;
       margin: auto;
       display: flex;
       flex-wrap: wrap;
@@ -28,7 +33,7 @@
 
     .inquiry-form {
       flex: 1 1 55%;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(51, 50, 50, 0.9);
       border-radius: 16px;
       padding: 30px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
@@ -130,8 +135,10 @@
       color: #0b5ed7;
     }
 
-        .navbar {
-  position: flex; /* Sits on top of the carousel */
+
+ 
+  .navbar {
+  position: relative; /* Sits on top of the carousel */
   width: 100%;
   z-index: 1000; /* Ensures it stays above the images */
   background-color: transparent !important; /* Removes the white background */
@@ -155,26 +162,37 @@
     text-decoration: underline !important;
     text-underline-offset: 5px; /* Makes the underline look cleaner */
   }
+  
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #fff;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #555;
   text-align: center;
   padding: 15px;
   font-size: 14px;
-  color: #555;
+  color: #ffffff;
+  background-color: #706e7b;
 }
   </style>
+
 </head>
 <body>
-
+<div class="page-transition">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXFxMG4wMWcxaDE1dXA4cjlsZDBxeGlwNnNmZmtoMjlwaDZyaWxtNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/LSL5oY5sdt75zm8uk6/giphy.gif" class="transition-gif" alt="loading">
+  
+    <div class="transition-content">
+      <div class="spinner-border text-light mb-3" role="status"></div>
+      <h2 class="text-white">Ready to Fly?</h2>
+    </div>
+</div>
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-light border-bottom">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Aerostar</a>
+      <a class="navbar-brand fw-bold" href="#">
+          <img src="logo.png" alt="Logo" height="50">
+      </a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -197,8 +215,8 @@ footer {
   <!-- INQUIRY SECTION -->
   <div class="inquiry-section">
     <!-- Left: Form -->
-    <div class="inquiry-form">
-      <h2>SEND INQUIRY!</h2>
+    <div class="inquiry-form text-white">
+      <h2 class="text-white">SEND INQUIRY!</h2>
       <form>
         <div class="row mb-3">
           <div class="col">
@@ -252,7 +270,7 @@ footer {
     <!-- Right: Visit Us -->
     <div class="visit-card">
       <h5>VISIT US</h5>
-      <img src="banner.png" height="50" alt="Map or Office Image">
+      <img src="banner.png" height="50" alt="Map">
       <div class="contact-info">
         <p><i class="bi bi-telephone-fill"></i>+639212867180</p>
         <p><i class="bi bi-clock-fill"></i>MON-SAT: 9AM-6PM</p>
@@ -273,11 +291,12 @@ footer {
   </footer>  <footer class="site-footer">
     <div class="d-flex justify-content-between align-items-center container">
       <div class="fw-bold">Aerostar Travel & Tours</div>
-      <div class="text-muted">Copyright @ Aerostar2026</div>
+      <div>Copyright @ Aerostar2026</div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="contact.js"></script>
+  <script src="transition.js"></script>
 </body>
 </html>
