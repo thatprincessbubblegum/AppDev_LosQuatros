@@ -32,7 +32,13 @@
   background-color: #000; 
 }
 
-
+.caption-box {
+  background-color: rgba(155, 147, 147, 0.45); 
+  backdrop-filter: blur(0px); 
+  display: inline-block; 
+  max-width: 600px; 
+  
+}
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
