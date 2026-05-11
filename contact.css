@@ -1,0 +1,180 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0 40px;
+    background-image:
+        linear-gradient(rgba(100, 98, 98, 0.6)),
+        url(https://static.vecteezy.com/system/resources/previews/012/999/193/large_2x/selective-focus-at-pen-on-plain-notebook-paper-on-working-table-with-blurred-laptop-computer-at-the-background-work-or-study-from-home-concept-new-normal-after-covid-pandemic-free-photo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.inquiry-section {
+    max-width: 1000px;
+    margin-top: 100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.inquiry-form {
+    flex: 1 1 55%;
+    background: rgba(51, 50, 50, 0.9);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.inquiry-form h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.btn-submit {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 24px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0d6efd;
+}
+
+.visit-card {
+    flex: 1 1 40%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.visit-card h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.visit-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #e9ecef;
+}
+
+.contact-info {
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.contact-info i {
+    color: #0d6efd;
+    margin-right: 8px;
+}
+
+.social-section {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.social-section h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-icons i {
+    font-size: 28px;
+    margin-bottom: 6px;
+    color: #0d6efd;
+}
+
+.social-icons a:hover i {
+    color: #0b5ed7;
+}
+
+
+
+.navbar {
+    position: relative;
+    /* Sits on top of the carousel */
+    width: 100%;
+    z-index: 1000;
+    /* Ensures it stays above the images */
+    background-color: transparent !important;
+    /* Removes the white background */
+    border-bottom: none !important;
+    /* Removes that thin gray line */
+}
+
+/* Adjusting Nav Link colors for visibility over images */
+/* 1. The Normal State (White) */
+.navbar-nav .nav-link,
+.navbar-brand {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    /* Removes underline by default */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. The Hover State (Yellow + Underline) */
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+    color: #e1e12f !important;
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+    /* Makes the underline look cleaner */
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container.mb-5 {
+    flex: 1 0 auto;
+}
+
+.site-footer {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px 40px;
+    font-size: 13px;
+    margin-top: auto;
+    width: 100%;
+}

@@ -1,254 +1,292 @@
-
-
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://horizontalfallsadventures.com.au/wp-content/uploads/2023/09/HFSA-WA-experiences-12.jpg');
-    background-size: cover;
-    background-position: center; 
-    min-height: 400px; /* Adjust this to control how much image shows */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .see-here-card img {
-    width: 100%;
-    height: 150px;       /* Forces all images to be the same height */
-    object-fit: cover;   /* Crops the image to fit without stretching it */
-    border-radius: 8px;  /* Optional: rounded corners like your cards */
-    border: 1px solid #ddd;
-  }
-  
-  .see-here-card p {
-    font-weight: 500;
-    color: #333;
-  }
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://horizontalfallsadventures.com.au/wp-content/uploads/2023/09/HFSA-WA-experiences-12.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  /* Adjust this to control how much image shows */
+  display: flex;
+  flex-direction: column;
+}
 
-.Trending-Destination-bg{
-    /* The Ocean Background Image */
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                url('https://cdn.britannica.com/66/194766-050-5908DD25/canyon-swell-reef-sunlight-water-surface-Pacific.jpg');
-    
-    /* SCROLL EFFECT: This makes the image stay fixed while the page moves */
-    background-attachment: fixed; 
-    
-    /* Standard positioning to make it look good */
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    margin-top: 0 !important; 
+.see-here-card img {
+  width: 100%;
+  height: 150px;
+  /* Forces all images to be the same height */
+  object-fit: cover;
+  /* Crops the image to fit without stretching it */
+  border-radius: 8px;
+  /* Optional: rounded corners like your cards */
+  border: 1px solid #ddd;
+}
+
+.see-here-card p {
+  font-weight: 500;
+  color: #333;
+}
+
+.Trending-Destination-bg {
+  /* The Ocean Background Image */
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('https://cdn.britannica.com/66/194766-050-5908DD25/canyon-swell-reef-sunlight-water-surface-Pacific.jpg');
+
+  /* SCROLL EFFECT: This makes the image stay fixed while the page moves */
+  background-attachment: fixed;
+
+  /* Standard positioning to make it look good */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin-top: 0 !important;
 }
 
 .Trending-Destination-bg .text-white {
-    color: #ffffff !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .Trending-Destination-bg .section-title {
-    color: #ffffff !important;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 50px !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 50px !important;
 }
 
 
 .dest-card {
-    border-radius: 15px; /* Rounds the corners */
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Glassy border */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy pop transition */
+  border-radius: 15px;
+  /* Rounds the corners */
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Glassy border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy pop transition */
 }
 
 /* HOVER EFFECT */
 .dest-card:hover {
-    transform: scale(1.05) translateY(-10px); /* Lifts and grows */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    border-color: rgba(255, 255, 255, 0.8);
-    z-index: 10;
+  transform: scale(1.05) translateY(-10px);
+  /* Lifts and grows */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
 }
 
 /* TEXT INSIDE CARDS */
 .dest-card span {
-    background: rgba(0, 0, 0, 0.5); /* Dark pill behind text for readability */
-    padding: 8px 20px;
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
-    color: white;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark pill behind text for readability */
+  padding: 8px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .Trending-Packages-bg {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('https://cdn.britannica.com/66/194766-050-5908DD25/canyon-swell-reef-sunlight-water-surface-Pacific.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Creates the scrolling move effect */
-    width: 100%;
-    margin-top: 0 !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://cdn.britannica.com/66/194766-050-5908DD25/canyon-swell-reef-sunlight-water-surface-Pacific.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Creates the scrolling move effect */
+  width: 100%;
+  margin-top: 0 !important;
 }
 
 /* Ensures the Trending Packages title is visible on the dark background */
 .Trending-Packages-bg h2 {
-    color: #ffffff !important;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-    font-weight: bold;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
 }
 
 /* Optional: Make the white cards slightly transparent to blend with the sea */
 .Trending-Packages-bg .card {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
-  position: absolute; /* Sits on top of the carousel */
+  position: absolute;
+  /* Sits on top of the carousel */
   width: 100%;
-  z-index: 1000; /* Ensures it stays above the images */
-  background-color: transparent !important; /* Removes the white background */
-  border-bottom: none !important; /* Removes that thin gray line */
+  z-index: 1000;
+  /* Ensures it stays above the images */
+  background-color: transparent !important;
+  /* Removes the white background */
+  border-bottom: none !important;
+  /* Removes that thin gray line */
 }
 
 .navbar-brand {
-    background-color: rgba(121, 116, 116, 0.45); 
-    padding: 5px 16px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(0px);
-  }
+  background-color: rgba(121, 116, 116, 0.45);
+  padding: 5px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0px);
+}
 
-  .navbar-nav .nav-link, 
-  .navbar-brand {
-    color: #ffffff !important; 
-    text-decoration: none !important; /* Removes underline by default */
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  }
+.navbar-nav .nav-link,
+.navbar-brand {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  /* Removes underline by default */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-  /* 2. The Hover State (Yellow + Underline) */
-  .navbar-nav .nav-link:hover, 
-  .navbar-brand:hover {
-    color: #e1e12f !important;
-    text-decoration: underline !important;
-    text-underline-offset: 5px; /* Makes the underline look cleaner */
-  }
+/* 2. The Hover State (Yellow + Underline) */
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+  color: #e1e12f !important;
+  text-decoration: underline !important;
+  text-underline-offset: 5px;
+  /* Makes the underline look cleaner */
+}
 
-  /* Space inside the hero below the navbar */
-  .hero-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-  }
+/* Space inside the hero below the navbar */
+.hero-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
 /* Card fit*/
- .card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
 
-  /* 2. Make all cards the same height in the row */
-  .card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+/* 2. Make all cards the same height in the row */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* 3. Push the 'Learn More' buttons to the very bottom so they align */
-  .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
+/* 3. Push the 'Learn More' buttons to the very bottom so they align */
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-  .card-body .btn {
-    margin-top: auto;
-    width: fit-content; /* Keeps the button from stretching too wide */
-  }
-  
- .dest-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0px;
-    }
+.card-body .btn {
+  margin-top: auto;
+  width: fit-content;
+  /* Keeps the button from stretching too wide */
+}
 
-    /* CARD STYLE */
-    .dest-card {
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      position: relative;
-      background: #ddd;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      border: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+}
 
-    /* HOVER EFFECT */
-    .dest-card:hover {
-      transform: scale(1.02);
-    }
+/* CARD STYLE */
+.dest-card {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  position: relative;
+  background: #ddd;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    /* TEXT ABOVE IMAGE */
-    .dest-card span {
-      position: relative;
-      z-index: 1;
-    }
+/* HOVER EFFECT */
+.dest-card:hover {
+  transform: scale(1.02);
+}
 
-    /* SPECIFIC POSITIONS */
-    .japan {
-      grid-column: 1;
-      grid-row: 1;
-      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cR7kIr2Xb7FUg1XX-XoVOr8NSukvdIIitw&s');
-    }
+/* TEXT ABOVE IMAGE */
+.dest-card span {
+  position: relative;
+  z-index: 1;
+}
 
-    .korea {
-      grid-column: 2;
-      grid-row: 1;
-      background-image: url('https://www.agoda.com/wp-content/uploads/2024/08/Namsan-Tower-during-autumn-in-Seoul-South-Korea.jpg');
-    }
+/* SPECIFIC POSITIONS */
+.japan {
+  grid-column: 1;
+  grid-row: 1;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cR7kIr2Xb7FUg1XX-XoVOr8NSukvdIIitw&s');
+}
 
-    .china {
-      grid-column: 3;
-      grid-row: 1;
-      background-image: url('https://images.chinahighlights.com/allpicture/2018/07/6db2c5369f9549958c71e489_cut_800x500_61.jpg');
-    }
+.korea {
+  grid-column: 2;
+  grid-row: 1;
+  background-image: url('https://www.agoda.com/wp-content/uploads/2024/08/Namsan-Tower-during-autumn-in-Seoul-South-Korea.jpg');
+}
 
-    .usa {
-      grid-column: 1;
-      grid-row: 2;
-      background-image: url('https://a.cdn-hotels.com/gdcs/production79/d567/927124e0-6bc6-4123-b007-e2b235afab1a.jpg?impolicy=fcrop&w=800&h=533&q=medium');
-    }
+.china {
+  grid-column: 3;
+  grid-row: 1;
+  background-image: url('https://images.chinahighlights.com/allpicture/2018/07/6db2c5369f9549958c71e489_cut_800x500_61.jpg');
+}
 
-    .spain {
-      grid-column: 2;
-      grid-row: 2;
-      background-image: url('https://www.travelandleisure.com/thmb/Z-VBppnbsT6Dm0cNDJ5-jqrayW0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-sagrada-familia-SPAINPLACES0423-210abe4a810340a8a226d4b65494127a.jpg');
-    }
+.usa {
+  grid-column: 1;
+  grid-row: 2;
+  background-image: url('https://a.cdn-hotels.com/gdcs/production79/d567/927124e0-6bc6-4123-b007-e2b235afab1a.jpg?impolicy=fcrop&w=800&h=533&q=medium');
+}
 
-    .local {
-      grid-column: 3;
-      grid-row: 2;
-      background-image: url('https://gttp.images.tshiftcdn.com/447345/x/0/boracay-island-budget-3-days-under-php7-000-at-the-philippinesrsquo-best-beach-destination-7.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883');
-    }
+.spain {
+  grid-column: 2;
+  grid-row: 2;
+  background-image: url('https://www.travelandleisure.com/thmb/Z-VBppnbsT6Dm0cNDJ5-jqrayW0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-sagrada-familia-SPAINPLACES0423-210abe4a810340a8a226d4b65494127a.jpg');
+}
 
-    
-    .tour-image img {
-      height: 300px;
-      /* adjust this value */
-      object-fit: cover;
-      /* prevents stretching */
-      width: 100%;
-    }
+.local {
+  grid-column: 3;
+  grid-row: 2;
+  background-image: url('https://gttp.images.tshiftcdn.com/447345/x/0/boracay-island-budget-3-days-under-php7-000-at-the-philippinesrsquo-best-beach-destination-7.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883');
+}
+
+
+.tour-image img {
+  height: 300px;
+  /* adjust this value */
+  object-fit: cover;
+  /* prevents stretching */
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container.mb-5 {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px;
+  font-size: 13px;
+  margin-top: auto;
+  width: 100%;
+}
