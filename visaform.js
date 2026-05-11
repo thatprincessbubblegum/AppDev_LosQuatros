@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Mapping countries to background images
         const backgrounds = {
-            "China": "https://images.unsplash.com/photo-1547981316-15947bca5411?auto=format&fit=crop&w=1000",
+            "China": "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1000",
             "South Korea": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1000",
             "Japan": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000",
             "USA": "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1000",
