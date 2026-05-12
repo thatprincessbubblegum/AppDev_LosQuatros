@@ -11,8 +11,8 @@
 
   .navbar-nav .nav-link, 
   .navbar-brand {
-    color: #ffffff;
-    text-decoration: none ;
+    color: #ffffff  !important;
+    text-decoration: none !important;
     transition: color 0.3s ease, text-decoration 0.3s ease;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
   }
