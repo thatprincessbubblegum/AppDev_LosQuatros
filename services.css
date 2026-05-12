@@ -36,7 +36,6 @@ body {
 
 
 
-/* SERVICES CARD (form container) */
 .services-card {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 24px;
@@ -48,7 +47,6 @@ body {
   border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* FILTER LABELS & INPUTS */
 .filter-label {
   font-size: 12px;
   color: #888;
@@ -68,7 +66,6 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* DESTINATION HEADER BANNER */
 .header-banner {
   height: 200px;
   border-radius: 16px;
@@ -106,7 +103,7 @@ body {
   margin-top: 10px;
 }
 
-/* APPLICANT BLOCKS */
+
 .applicant-block {
   border-left: 6px solid #0d6efd;              /* thicker accent stripe */
   background: rgba(255, 255, 255, 0.85);       /* frosted glass */
@@ -119,21 +116,19 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect to make it pop */
 .applicant-block:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
-/* Field labels inside applicant block */
+
 .applicant-block .field-label {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #0d6efd; /* accent color for labels */
+  color: #0d6efd;
 }
 
-/* Inputs inside applicant block */
 .applicant-block input,
 .applicant-block select {
   background: rgba(255,255,255,0.7);
@@ -152,7 +147,6 @@ body {
   color: #333;
 }
 
-/* FOOTER */
 .site-footer {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
