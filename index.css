@@ -19,8 +19,8 @@
 
   .navbar-nav .nav-link:hover, 
   .navbar-brand:hover {
-    color: #e1e12f ;
-    text-decoration: underline;
+    color: #e1e12f !important ;
+    text-decoration: underline !important;
     text-underline-offset: 5px;
   }
 
