@@ -1,4 +1,4 @@
-// Strip digits from name fields while allowing special characters
+
 function preventNumbers(input) {
   input.addEventListener('input', function () {
     const pos = this.selectionStart;
@@ -16,18 +16,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const applicantsContainer = document.getElementById("applicantsContainer");
     const visaForm = document.getElementById("visaForm");
 
-    // 1. Set Date Restriction (Today & Future Only)
+    
     const today = new Date().toISOString().split("T")[0];
     entryDateInput.setAttribute("min", today);
 
-    // 2. Update Header when Country is Selected
+
     window.updateUI = function () {
         const select = document.getElementById("entryCountry");
         const selectedOption = select.options[select.selectedIndex];
         const flag = selectedOption.getAttribute("data-flag");
         const header = document.getElementById("destHeader");
 
-        // Mapping countries to background images
+    
         const backgrounds = {
             "China": "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1000",
             "South Korea": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1000",
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // 3. Generate Applicant Fields
+
     numApplicantsInput.addEventListener("input", function () {
         applicantsContainer.innerHTML = "";
         const count = parseInt(this.value);
@@ -95,12 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             applicantsContainer.appendChild(div);
 
-            // Prevent numbers in first/last name fields
+
             div.querySelectorAll('.firstName, .lastName').forEach(preventNumbers);
         }
     });
 
-    // 4. Form Submission
+
     visaForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -127,12 +127,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const successModal = new bootstrap.Modal(document.getElementById('visaSuccessModal'));
         successModal.show();
 
-        // Save to localStorage
+ 
         let inquiries = JSON.parse(localStorage.getItem("aerostarInquiries")) || [];
         inquiries.push(submissionData);
         localStorage.setItem("aerostarInquiries", JSON.stringify(inquiries));
 
-        // Reset
+    
         visaForm.reset();
         applicantsContainer.innerHTML = "";
         document.getElementById("destHeader").classList.add("d-none");
