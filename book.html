@@ -202,7 +202,6 @@
     </div>
   </nav>
 
-  <!-- WARNING MODAL -->
   <div class="modal fade" id="visaWarningModal" tabindex="-1" aria-labelledby="visaWarningModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -241,7 +240,7 @@
     </div>
   </div>
 
-  <!-- Script to auto-show the modal -->
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var warningModal = new bootstrap.Modal(document.getElementById('visaWarningModal'), {
@@ -252,26 +251,25 @@
     });
   </script>
 
-  <!-- PAGE TITLE -->
+  
   <div class="container my-4 text-center">
     <h1 class="page-title">BOOK YOUR ADVENTURE</h1>
   </div>
 
-  <!-- MAIN LAYOUT -->
   <div class="container mb-5">
     <form id="bookingForm">
       <div class="row g-0 booking-wrapper">
 
-        <!-- LEFT PANEL -->
+        
         <div class="col-md-4 col-lg-3 left-panel">
 
-          <!-- Destination or Image Dynamic Image -->
+        
           <img id="dynamicImage" class="img-fluid"
             src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&h=600"
             alt="Destination preview"
             style="width: 100%; border-radius: 8px; margin-bottom: 20px; aspect-ratio: 4/3; object-fit: cover;">
 
-          <!-- Selection Type (Destination or Package) -->
+          
           <div class="mb-3">
             <div class="field-label">I want to book a:</div>
             <select id="selectionType" class="form-control form-control-sm">
@@ -280,7 +278,7 @@
             </select>
           </div>
 
-          <!-- Selection Name (Destination or Package name) -->
+          
           <div class="mb-3">
             <div class="field-label">Name of Destination / Package</div>
             <select id="selectionName" class="form-control form-control-sm">
@@ -296,25 +294,25 @@
             </select>
           </div>
 
-          <!-- Number of Guests -->
+    
           <div class="mb-3">
             <div class="field-label">Number of Guests</div>
             <input type="number" id="numGuests" class="form-control form-control-sm" min="1" max="20" placeholder="">
           </div>
 
-          <!-- Start Date -->
+          
           <div class="mb-3">
             <div class="field-label">Start Date:</div>
             <input type="date" id="startDate" class="form-control form-control-sm">
           </div>
 
-          <!-- End Date -->
+          
           <div class="mb-3">
             <div class="field-label">End Date:</div>
             <input type="date" id="endDate" class="form-control form-control-sm">
           </div>
 
-          <!-- BOOKING SUMMARY -->
+          
           <div class="booking-summary-section">
             <div class="section-title">BOOKING SUMMARY</div>
             <div class="summary-line">Selection Type: <span id="summaryType">—</span></div>
@@ -325,16 +323,16 @@
             <div class="summary-line">Guests: <span id="summaryGuests">—</span></div>
           </div>
 
-          <!-- Submit -->
+          
           <button type="submit" class="submit-btn mb-2">Submit</button>
 
         </div>
 
-        <!-- RIGHT PANEL -->
+        
         <div class="col-md-8 col-lg-9 right-panel">
           <h5 class="section-title mb-3" style="font-size:1.1rem; letter-spacing:1px;">PASSENGER DETAILS:</h5>
 
-          <!-- Guest forms injected here -->
+          
           <div id="guestContainer">
             <p class="text-muted" style="font-size:13px;">Enter number of guests to fill in passenger details.</p>
           </div>
@@ -344,7 +342,7 @@
     </form>
   </div>
 
-  <!-- SUCCESS MODAL -->
+ 
   <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -374,7 +372,7 @@
     </div>
   </div>
 
-  <!-- COPYRIGHT FOOTER -->
+  
   <footer class="site-footer">
     <div class="d-flex justify-content-between align-items-center container bgcolor-success">
       <div class="fw-bold">Aerostar Travel & Tours</div>
