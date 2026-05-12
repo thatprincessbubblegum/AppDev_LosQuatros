@@ -1,3 +1,20 @@
+// Strip digits from name fields while allowing special characters
+function preventNumbers(input) {
+  input.addEventListener('input', function () {
+    const pos = this.selectionStart;
+    const cleaned = this.value.replace(/[0-9]/g, '');
+    if (cleaned !== this.value) {
+      this.value = cleaned;
+      this.setSelectionRange(pos - 1, pos - 1);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  preventNumbers(document.getElementById('firstName'));
+  preventNumbers(document.getElementById('lastName'));
+});
+
 document.querySelector('form').addEventListener('submit', function(e) {
   e.preventDefault();
 

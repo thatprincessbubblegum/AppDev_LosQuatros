@@ -1,3 +1,15 @@
+// Strip digits from name fields while allowing special characters
+function preventNumbers(input) {
+  input.addEventListener('input', function () {
+    const pos = this.selectionStart;
+    const cleaned = this.value.replace(/[0-9]/g, '');
+    if (cleaned !== this.value) {
+      this.value = cleaned;
+      this.setSelectionRange(pos - 1, pos - 1);
+    }
+  });
+}
+
 const selectionOptions = {
   Destination: [
     'Japan', 'South Korea', 'China', 'United States',
@@ -133,6 +145,9 @@ function renderGuests(count) {
   }
   container.innerHTML = html;
   updateGuestSummary();
+
+  // Prevent numbers in all first/last name fields
+  container.querySelectorAll('input[placeholder="First Name"], input[placeholder="Last Name"]').forEach(preventNumbers);
 
   document.querySelectorAll('.guest-type-select').forEach(sel => {
     sel.addEventListener('change', updateGuestSummary);

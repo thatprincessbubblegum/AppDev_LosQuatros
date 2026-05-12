@@ -1,3 +1,15 @@
+// Strip digits from name fields while allowing special characters
+function preventNumbers(input) {
+  input.addEventListener('input', function () {
+    const pos = this.selectionStart;
+    const cleaned = this.value.replace(/[0-9]/g, '');
+    if (cleaned !== this.value) {
+      this.value = cleaned;
+      this.setSelectionRange(pos - 1, pos - 1);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const entryDateInput = document.getElementById("entryDate");
     const numApplicantsInput = document.getElementById("numApplicants");
@@ -82,6 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
             applicantsContainer.appendChild(div);
+
+            // Prevent numbers in first/last name fields
+            div.querySelectorAll('.firstName, .lastName').forEach(preventNumbers);
         }
     });
 
